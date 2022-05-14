@@ -1,13 +1,6 @@
 **.rar
 *.rar
-*.VC
-*.VC.db
-*.VC.db-shm
-*.VC.db-wal
-*.VC.opendb
-**.VC.db
-**.VC.db-shm
-**.VC.db-wal
-**.VC.opendb
 *.zip
 *.vs
+/.vs
+.vs/
