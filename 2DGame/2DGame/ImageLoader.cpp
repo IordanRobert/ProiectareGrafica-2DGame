@@ -1,7 +1,9 @@
 ﻿#include "ImageLoader.h"
+#include "picopng.h"
 
 #include <assert.h>
 #include <fstream>
+#include <string>
 
 using namespace std;
 Image::Image(char* ps, unsigned int w, unsigned int h) : pixels(ps), width(w), height(h) {
@@ -153,3 +155,42 @@ Image* loadBMP(const char* filename) {
 	input.close();
 	return new Image(pixels2.release(), width, height);
 }
+
+GLTexture loadPNG(const char* filename, const std::string textureName, const int textureId) {
+	GLTexture texture = {};
+
+	vector<unsigned char> out;
+	vector<unsigned char> in;
+	unsigned long width, height;
+
+	ifstream input;
+	input.open(filename, ifstream::binary);
+
+	while (!input.eof()) {
+		in.push_back(input.get());
+	}
+
+	input.close();
+
+	int errorCode = decodePNG(out, width, height, &(in[0]), in.size());
+	if (errorCode != 0) {
+		assert(!"decodePNG failed with error: " + errorCode);
+	}
+
+	glGenTextures(1, &(texture.id));
+	glBindTexture(GL_TEXTURE_2D, texture.id);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, &(out[0]));
+
+	return GLTexture();
+}
+
+//void createTexture(const char* filename, const std::string textureName, uint8_t textureId) {
+//	loadPNG(filename, textureName, textureId);
+//	textures.insert(std::pair<std::string, int>(textureName, textureId));
+//}
+//
+//void loadTextures() {
+//	createTexture("./Resources/Characters/Cyborg/Cyborg_hurt.png", "cyborg", 1);
+//	createTexture("./Resources/Characters/Biker/Biker_hurt.png", "biker", 2);
+//	createTexture("./Resources/Characters/Punk/Punk_hurt.png", "punk", 3);
+//}

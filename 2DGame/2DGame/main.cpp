@@ -1,14 +1,16 @@
 ﻿#include <GL/glut.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <stdlib.h>
 #include <stdio.h>
-#include <cstdint>
 #include <iostream>
+#include <list>
 
 #include "Object.h"
 #include "Character.h"
 #include "ImageLoader.h"
+#include "lodepng.h"
+#include "picopng.h"
+#include "WorldPhysics.h"
 
 float movementX = 0.0;
 float movementY = 0.0;
@@ -20,23 +22,18 @@ double blue = 0.0;
 int screenWidth = 800;
 int screenHeight = 600;
 
-float entities[10][4];
-int entitiesIdx = 0;
-void initEntities();
-void addEntities(float XY[4]);
-void removeEntities();
-
-bool collisionAABB(float posX, float posY);
-bool collisionUp();
-bool collisionDown();
-bool collisionLeft();
-bool collisionRight();
-
 Character player(48.0, 5.0, 6.0);
 Object ground;
 Object platformLeft;
 Object platformRight;
 Object platformCenter;
+
+Object bgPart1;
+Object bgPart2;
+Object bgPart3;
+Object bgPart4;
+Object bgPart5;
+Object bgIllumination;
 
 float gravityForce = 2.0;
 bool gravityActive = true;
@@ -63,6 +60,8 @@ void specialKeys();
 GLuint _textureId;
 GLuint loadTexture(Image* image);
 void initRendering(const char path[]);
+void createTexture(const char* filename, std::string textureName, uint8_t textureId);
+void loadTextures();
 
 int main(int argc, char** argv)
 {
@@ -75,7 +74,7 @@ int main(int argc, char** argv)
 
 	init();
 
-	initRendering("sponge24bit.bmp");
+	//initRendering("sponge24bit.bmp");
 
 	glutDisplayFunc(display);
 
@@ -93,23 +92,62 @@ int main(int argc, char** argv)
 
 void init(void)
 {
-	glClearColor(0.0, 0.0, 0.5, 0.0);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glPointSize(1.0);
 	glShadeModel(GL_SMOOTH);
 	gluOrtho2D(-screenWidth / 2, screenWidth / 2, -screenHeight / 2, screenHeight / 2);
 
+	loadTextures();
+
 	initEntities();
+	
+	/* BACKGROUND */
+	bgPart1.coords[0] = -screenWidth / 2;
+	bgPart1.coords[1] = -screenHeight / 2 + 32;
+	bgPart1.coords[2] = screenWidth / 2;
+	bgPart1.coords[3] = screenWidth / 2;
+	bgPart1.texture = textures["DayPart1"];
+
+	bgPart2.coords[0] = -screenWidth / 2;
+	bgPart2.coords[1] = -screenHeight / 2 + 32;
+	bgPart2.coords[2] = screenWidth / 2;
+	bgPart2.coords[3] = screenWidth / 2;
+	bgPart2.texture = textures["DayPart2"];
+
+	bgPart3.coords[0] = -screenWidth / 2;
+	bgPart3.coords[1] = -screenHeight / 2 + 32;
+	bgPart3.coords[2] = screenWidth / 2;
+	bgPart3.coords[3] = screenWidth / 2;
+	bgPart3.texture = textures["DayPart3"];
+
+	bgPart4.coords[0] = -screenWidth / 2;
+	bgPart4.coords[1] = -screenHeight / 2 + 32;
+	bgPart4.coords[2] = screenWidth / 2;
+	bgPart4.coords[3] = screenWidth / 2;
+	bgPart4.texture = textures["DayPart4"];
+
+	bgPart5.coords[0] = -screenWidth / 2;
+	bgPart5.coords[1] = -screenHeight / 2 + 32;
+	bgPart5.coords[2] = screenWidth / 2;
+	bgPart5.coords[3] = screenWidth / 2;
+	bgPart5.texture = textures["DayPart5"];
+
+	bgIllumination.coords[0] = -screenWidth / 2;
+	bgIllumination.coords[1] = -screenHeight / 2 + 32;
+	bgIllumination.coords[2] = screenWidth / 2;
+	bgIllumination.coords[3] = screenWidth / 2;
+	bgIllumination.texture = textures["Illumination"];
+
 	/* GROUND */
 	//glRectf(-screenWidth / 2, -screenHeight / 2, screenWidth / 2, -screenHeight / 2 + 20);
 	ground.coords[0] = -screenWidth / 2.0;
 	ground.coords[1] = -screenHeight / 2.0;
 	ground.coords[2] = screenWidth / 2.0;
-	ground.coords[3] = -screenHeight / 2.0 + 20;
+	ground.coords[3] = -screenHeight / 2.0 + 32;
+	ground.texture = textures["tileTop"];
 	addEntities(ground.coords);
-	
-	ground.color[0] = 0.0;
-	ground.color[1] = 0.63;
-	ground.color[2] = 0.0;
 
 
 	/* PLATFORMS */
@@ -118,40 +156,31 @@ void init(void)
 	platformLeft.coords[1] = -screenHeight / 2.0 + 150;
 	platformLeft.coords[2] = -screenWidth / 2.0 + 300;
 	platformLeft.coords[3] = -screenHeight / 2.0 + 20 + 150;
+	platformLeft.texture = textures["tileTop"];
 	addEntities(platformLeft.coords);
-
-	platformLeft.color[0] = 0.25;
-	platformLeft.color[1] = 0.25;
-	platformLeft.color[2] = 0.25;
 
 	//glRectf(screenWidth / 2 - 100, -screenHeight / 2 + 150, screenWidth / 2 - 300, -screenHeight / 2 + 20 + 150);
 	platformRight.coords[0] = screenWidth / 2.0 - 100;
 	platformRight.coords[1] = -screenHeight / 2.0 + 150;
 	platformRight.coords[2] = screenWidth / 2.0 - 300;
 	platformRight.coords[3] = -screenHeight / 2.0 + 20 + 150;
+	platformRight.texture = textures["tileTop"];
 	addEntities(platformRight.coords);
-
-	platformRight.color[0] = 0.25;
-	platformRight.color[1] = 0.25;
-	platformRight.color[2] = 0.25;
 
 	//glRectf(-screenWidth / 2 + 310, -screenHeight / 2 + 250, screenWidth / 2 - 310, -screenHeight / 2 + 20 + 250);
 	platformCenter.coords[0] = -screenWidth / 2.0 + 310;
 	platformCenter.coords[1] = -screenHeight / 2.0 + 250;
 	platformCenter.coords[2] = screenWidth / 2.0 - 310;
 	platformCenter.coords[3] = -screenHeight / 2.0 + 20 + 250;
+	platformCenter.texture = textures["tileTop"];
 	addEntities(platformCenter.coords);
-
-	platformCenter.color[0] = 0.25;
-	platformCenter.color[1] = 0.25;
-	platformCenter.color[2] = 0.25;
-
+	
 }
 
 void gravity() {
-	if (!collisionDown() && gravityActive) {
+	if (!collisionDown(movementX, movementY, player) && gravityActive) {
 		for (float i = 0; i <= gravityForce; i += 0.1) {
-			if (!collisionDown()) {
+			if (!collisionDown(movementX, movementY, player)) {
 				movementY -= 0.1;
 				player.move(movementX, movementY);
 			}
@@ -161,10 +190,10 @@ void gravity() {
 }
 
 void lazyJmp() {
-	if (!collisionUp() && gravityActive && player.isInAir && !player.isFalling) {
+	if (!collisionUp(movementX, movementY, player) && gravityActive && player.isInAir && !player.isFalling) {
 		//std::cout << "here" << std::endl;
 		for (float i = 0; i <= player.maxJump; i += 0.1) {
-			if (!collisionUp()) {
+			if (!collisionUp(movementX, movementY, player)) {
 				movementY += 0.1;
 				player.move(movementX, movementY);
 				//if (i = player.maxJump) player.isFalling = true;
@@ -180,10 +209,17 @@ void display(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPushMatrix();
 
+	//bgPart4.renderTex();
+	bgPart5.renderTex();
+	bgPart1.renderTex();
+	bgPart2.renderTex();
+	bgPart3.renderTex();
+	//bgIllumination.renderTex();
+
 	player.color[0] = 1.0;
 	player.color[1] = 1.0;
 	player.color[2] = 1.0;
-	player.texture = _textureId;
+	player.texture = textures["biker"];
 	player.renderTex();
 
 	/*float playerCX = movementX;
@@ -193,10 +229,23 @@ void display(void)
 	glColor3f(1.0, 0.0, 0.0);
 	glRectf(playerCX-2, playerCY-2, playerCX+2, playerCY+2);*/
 
-	ground.render();
-	platformLeft.render();
-	platformRight.render();
-	platformCenter.render();
+	ground.renderTex();
+	platformLeft.renderTex();
+	platformRight.renderTex();
+	platformCenter.renderTex();
+
+
+	//Test
+	/*Object test;
+	test.coords[0] = 0;
+	test.coords[1] = 0;
+	test.coords[2] = 32;
+	test.coords[3] = 32;
+	test.color[0] = 1.0;
+	test.color[1] = 1.0;
+	test.color[2] = 1.0;
+	test.texture = textures["tileTop"];
+	test.renderTex();*/
 
 	glutPostRedisplay();
 	glPopMatrix();
@@ -252,7 +301,7 @@ void controls() {
 
 void movementKeys() {
 	if (keyStates['w'] || keyStates['W'])
-			if (!collisionUp() && !player.isInAir) {
+			if (!collisionUp(movementX, movementY, player) && !player.isInAir) {
 					player.isInAir = true;
 					/*for (float i = 0; i <= player.maxJump; i += 0.1) {
 						if (!collisionUp()) {
@@ -265,9 +314,9 @@ void movementKeys() {
 	//printf("X: %f\n Y: %f\n", movementX, movementY);
 		
 	if (keyStates['s'] || keyStates['S'])
-		if (!collisionDown()) {
+		if (!collisionDown(movementX, movementY, player)) {
 			for (float i = 0; i <= player.maxSpeed; i += 0.1) {
-				if (!collisionDown()) {
+				if (!collisionDown(movementX, movementY, player)) {
 					movementY -= 0.1;
 					player.move(movementX, movementY);
 				}
@@ -278,9 +327,9 @@ void movementKeys() {
 
 	if (keyStates['a'] || keyStates['A'])
 		if (-screenWidth / 2 + player.size/2 < movementX) 
-			if (!collisionLeft()) {
+			if (!collisionLeft(movementX, movementY, player)) {
 				for (float i = 0; i <= player.maxSpeed; i += 0.1) {
-					if (!collisionLeft()) {
+					if (!collisionLeft(movementX, movementY, player)) {
 						movementX -= 0.1;
 						player.move(movementX, movementY);
 					}
@@ -291,9 +340,9 @@ void movementKeys() {
 
 	if(keyStates['d'] || keyStates['D'])
 		if (screenWidth / 2 - player.size/2 > movementX) 
-			if (!collisionRight()) {
+			if (!collisionRight(movementX, movementY, player)) {
 				for (float i = 0; i <= player.maxSpeed; i += 0.1) {
-					if (!collisionRight()) {
+					if (!collisionRight(movementX, movementY, player)) {
 						movementX += 0.1;
 						player.move(movementX, movementY);
 					}
@@ -338,72 +387,6 @@ void specialKeys() {
 	}
 }
 
-void initEntities() {
-	for (float* entity : entities) {
-		entity[0] = UINT16_MAX;
-		entity[1] = UINT16_MAX;
-		entity[2] = UINT16_MAX;
-		entity[3] = UINT16_MAX;
-	}
-}
-
-void addEntities(float XY[]) {
-	entities[entitiesIdx][0] = XY[0];
-	entities[entitiesIdx][1] = XY[1];
-	entities[entitiesIdx][2] = XY[2];
-	entities[entitiesIdx][3] = XY[3];
-	entitiesIdx++;
-}
-
-bool collisionAABB(float posX, float posY) {
-	float playerCX = posX;
-	float playerCY = posY;
-	//printf("player: %f %f\n", playerCX, playerCY);
-
-	for (float *entity : entities) {
-		float entityX = abs(*entity - *(entity + 2));
-		float entityY = abs(*(entity + 1) - *(entity + 3));
-		float entityCX = *entity + (*(entity+2) - *entity)/2;
-		float entityCY = *(entity+1) + (*(entity+3) - *(entity+1))/2;
-
-		//printf("entity(cx, cy, x, y): %f %f %f %f\n", entityCX, entityCY, entityX, entityY);
-
-		if (playerCX + player.size / 2 > entityCX - entityX / 2
-			&& playerCX - player.size / 2 < entityCX + entityX / 2
-			&& playerCY + player.size / 2 > entityCY - entityY / 2
-			&& playerCY - player.size / 2 < entityCY + entityY / 2)
-		{
-			//std::cout << "Collision detected\n";
-			return true;
-		}
-	}
-	return false;
-}
-
-bool collisionUp() {
-	float nextX = movementX, nextY = movementY + 0.1;
-	return collisionAABB(nextX, nextY);
-}
-
-bool collisionDown() {
-	float nextX = movementX, nextY = movementY - 0.1;
-	if (collisionAABB(nextX, nextY)) {
-		player.isInAir = false;
-		player.isFalling = false;
-	}
-	return collisionAABB(nextX, nextY);
-}
-
-bool collisionLeft() {
-	float nextX = movementX - 0.1, nextY = movementY;
-	return collisionAABB(nextX, nextY);
-}
-
-bool collisionRight() {
-	float nextX = movementX + 0.1, nextY = movementY;
-	return collisionAABB(nextX, nextY);
-}
-
 //Transforma imaginea într-o textură, și returnează ID-ul texturii
 GLuint loadTexture(Image* image) {
 	GLuint textureId;
@@ -435,4 +418,39 @@ void timer(int cadrucurent) {
 	gravity();
 	controls();
 	glutTimerFunc(1000 / 120, timer, cadrucurent);
+}
+
+void createTexture(const char* filename, const std::string textureName, uint8_t textureId) {
+	loadPNG(filename, textureName, textureId);
+	textures.insert(std::pair<std::string, int>(textureName, textureId));
+}
+
+void loadTextures() {
+	//Characters
+	createTexture("./Resources/Characters/Cyborg/Cyborg_hurt.png", "cyborg", 1);
+	createTexture("./Resources/Characters/Biker/Biker_hurt.png", "biker", 2);
+	createTexture("./Resources/Characters/Punk/Punk_hurt.png", "punk", 3);
+
+	//Tiles
+	createTexture("./Resources/Components/Tiles/Tile_05.png", "tileTop", 5);
+	createTexture("./Resources/Components/Tiles/Tile_06.png", "tileLeft", 6);
+	createTexture("./Resources/Components/Tiles/Tile_07.png", "tileMiddle", 7);
+	createTexture("./Resources/Components/Tiles/Tile_08.png", "tileRight", 8);
+
+	//Background Day
+	createTexture("./Resources/Components/Background/Day/1.png", "DayPart1", 10);
+	createTexture("./Resources/Components/Background/Day/2.png", "DayPart2", 11);
+	createTexture("./Resources/Components/Background/Day/3.png", "DayPart3", 12);
+	createTexture("./Resources/Components/Background/Day/4.png", "DayPart4", 13);
+	createTexture("./Resources/Components/Background/Day/5.png", "DayPart5", 14);
+
+	//Background Night
+	createTexture("./Resources/Components/Background/Night/1.png","NightPart1", 15);
+	createTexture("./Resources/Components/Background/Night/2.png","NightPart2", 16);
+	createTexture("./Resources/Components/Background/Night/3.png","NightPart3", 17);
+	createTexture("./Resources/Components/Background/Night/4.png","NightPart4", 18);
+	createTexture("./Resources/Components/Background/Night/5.png","NightPart5", 19);
+
+	//Background Illumination
+	createTexture("./Resources/Components/Background/Overlay_illumination.png", "Illumination", 20);
 }

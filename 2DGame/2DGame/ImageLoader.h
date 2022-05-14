@@ -1,8 +1,16 @@
 ﻿#pragma once
+
 #include <vector>
+#include "GLTexture.h"
+#include <string>
+#include <map>
+#include <string>
 
 #ifndef IMAGE_LOADER_H_INCLUDED
 #define IMAGE_LOADER_H_INCLUDED
+
+static std::map<std::string, int> textures;
+
 //Reprezentarea unei imagini
 class Image {
 public:
@@ -19,5 +27,9 @@ public:
 };
 //Citeste imaginea bmp din fisier.
 Image* loadBMP(const char* filename);
-#endif
+GLTexture loadPNG(const char* filename, std::string textureName, const int textureId);
 
+//void createTexture(const char* filename, const std::string textureName, uint8_t textureId);
+//void loadTextures();
+
+#endif

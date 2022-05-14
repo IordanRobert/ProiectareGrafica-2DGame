@@ -8,7 +8,7 @@ class Object
 {
 public:
 	float coords[4] = { 0.0,0.0,0.0,0.0 };
-	float color[3] = { 0.0,0.0,0.0 };
+	float color[3] = { 1.0,1.0,1.0 };
 	GLuint texture = NULL;
 	Object() {
 	};
@@ -36,6 +36,25 @@ public:
 		glVertex2f(this->coords[2], this->coords[3]);
 		glVertex2f(this->coords[0], this->coords[3]);
 		glEnd();
+	}
+	void renderTex() {
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, this->texture);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glColor3f(this->color[0], this->color[1], this->color[2]);
+		//glRectf(this->coords[0] - this->size / 2, this->coords[1] - this->size / 2, this->coords[2] + this->size / 2, this->coords[3] + this->size / 2);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0, 1.0);
+		glVertex2f(this->coords[0], this->coords[1]);
+		glTexCoord2f(1.0, 1.0);
+		glVertex2f(this->coords[2], this->coords[1]);
+		glTexCoord2f(1.0, 0.0);
+		glVertex2f(this->coords[2], this->coords[3]);
+		glTexCoord2f(0.0, 0.0);
+		glVertex2f(this->coords[0], this->coords[3]);
+		glEnd();
+		glDisable(GL_TEXTURE_2D);
 	}
 };
 

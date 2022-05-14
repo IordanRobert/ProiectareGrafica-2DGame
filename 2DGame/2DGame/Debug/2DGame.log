@@ -1,39 +1,58 @@
 ﻿  main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\Character.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'float'
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\Character.h(10,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(104,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(105,35): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(106,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(111,24): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(117,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(118,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(119,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(120,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(128,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(129,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(130,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(131,53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(139,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(140,49): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(141,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(142,54): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,48): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(155,21): warning C4305: '-=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(166,50): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(168,21): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(208,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(210,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(269,52): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(271,22): warning C4305: '-=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(282,53): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(284,23): warning C4305: '-=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(295,53): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(297,23): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(312,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(318,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(384,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(389,33): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(398,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(403,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(109,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(110,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(113,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(114,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(115,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(116,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(119,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(120,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(121,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(122,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(125,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(126,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(127,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(128,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(131,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(132,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(133,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(134,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(137,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(138,47): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(139,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(140,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(145,34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(146,35): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(147,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(148,41): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(155,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(156,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(157,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(158,52): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(163,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(164,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(165,46): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(166,53): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(171,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(172,49): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(173,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(174,54): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(182,48): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(184,21): warning C4305: '-=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(195,50): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(197,21): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(257,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(259,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(318,52): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(320,22): warning C4305: '-=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(331,53): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(333,23): warning C4305: '-=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(344,53): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(346,23): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(361,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(367,16): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   2DGame.vcxproj -> E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\Debug\2DGame.exe
