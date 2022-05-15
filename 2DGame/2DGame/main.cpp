@@ -19,10 +19,27 @@ double red = 0.0;
 double green = 0.0;
 double blue = 0.0;
 
-int screenWidth = 800;
-int screenHeight = 600;
+int screenWidth = 576*2;
+int screenHeight = 324*2;
 
 Character player(48.0, 5.0, 6.0);
+int sprites = 8;
+int currentSprite = 0;
+int animationCounter = 0;
+#define ANIMATION_DELAY 20
+void animationAttack1();
+void animationAttack2();
+void animationAttack3();
+void animationClimb();
+void animationDeath();
+void animationDoublejump();
+void animationHurt();
+void animationIdle();
+void animationJump();
+void animationPunch();
+void animationRun();
+void animationRunAttack();
+
 Object ground;
 Object platformLeft;
 Object platformRight;
@@ -209,19 +226,24 @@ void display(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPushMatrix();
 
-	//bgPart4.renderTex();
-	bgPart5.renderTex();
 	bgPart1.renderTex();
 	bgPart2.renderTex();
 	bgPart3.renderTex();
+	bgPart4.renderTex();
+	bgPart5.renderTex();
 	//bgIllumination.renderTex();
 
 	player.color[0] = 1.0;
 	player.color[1] = 1.0;
 	player.color[2] = 1.0;
-	player.texture = textures["biker"];
-	player.renderTex();
-
+	player.character = "biker";
+	animationRunAttack();
+	player.renderTex(currentSprite, sprites);
+	if (animationCounter >= ANIMATION_DELAY) {
+		animationCounter = 0;
+		currentSprite > sprites ? (currentSprite = 0) : currentSprite++;
+	}
+	animationCounter++;
 	/*float playerCX = movementX;
 	float playerCY = movementY;
 
@@ -332,6 +354,7 @@ void movementKeys() {
 					if (!collisionLeft(movementX, movementY, player)) {
 						movementX -= 0.1;
 						player.move(movementX, movementY);
+						player.direction = 'l';
 					}
 					else break;
 				}
@@ -345,6 +368,7 @@ void movementKeys() {
 					if (!collisionRight(movementX, movementY, player)) {
 						movementX += 0.1;
 						player.move(movementX, movementY);
+						player.direction = 'r';
 					}
 					else break;
 				}
@@ -426,31 +450,132 @@ void createTexture(const char* filename, const std::string textureName, uint8_t 
 }
 
 void loadTextures() {
-	//Characters
-	createTexture("./Resources/Characters/Cyborg/Cyborg_hurt.png", "cyborg", 1);
-	createTexture("./Resources/Characters/Biker/Biker_hurt.png", "biker", 2);
-	createTexture("./Resources/Characters/Punk/Punk_hurt.png", "punk", 3);
+	/* Characters */
+	int i = 1;
+	//Biker
+	createTexture("./Resources/Characters/Biker/Biker_attack1.png", "biker_attack1", i++);
+	createTexture("./Resources/Characters/Biker/Biker_attack2.png", "biker_attack2", i++);
+	createTexture("./Resources/Characters/Biker/Biker_attack3.png", "biker_attack3", i++);
+	createTexture("./Resources/Characters/Biker/Biker_climb.png", "biker_climb", i++);
+	createTexture("./Resources/Characters/Biker/Biker_death.png", "biker_death", i++);
+	createTexture("./Resources/Characters/Biker/Biker_doublejump.png", "biker_doublejump", i++);
+	createTexture("./Resources/Characters/Biker/Biker_hurt.png", "biker_hurt", i++);
+	createTexture("./Resources/Characters/Biker/Biker_idle.png", "biker_idle", i++);
+	createTexture("./Resources/Characters/Biker/Biker_jump.png", "biker_jump", i++);
+	createTexture("./Resources/Characters/Biker/Biker_punch.png", "biker_punch", i++);
+	createTexture("./Resources/Characters/Biker/Biker_run.png", "biker_run", i++);
+	createTexture("./Resources/Characters/Biker/Biker_run_attack.png", "biker_run_attack", i++);
+
+	
+	//Punk
+	createTexture("./Resources/Characters/Punk/Punk_attack1.png", "punk_attack1", i++);
+	createTexture("./Resources/Characters/Punk/Punk_attack2.png", "punk_attack2", i++);
+	createTexture("./Resources/Characters/Punk/Punk_attack3.png", "punk_attack3", i++);
+	createTexture("./Resources/Characters/Punk/Punk_climb.png", "punk_climb", i++);
+	createTexture("./Resources/Characters/Punk/Punk_death.png", "punk_death", i++);
+	createTexture("./Resources/Characters/Punk/Punk_doublejump.png", "punk_doublejump", i++);
+	createTexture("./Resources/Characters/Punk/Punk_hurt.png", "punk_hurt", i++);
+	createTexture("./Resources/Characters/Punk/Punk_idle.png", "punk_idle", i++);
+	createTexture("./Resources/Characters/Punk/Punk_jump.png", "punk_jump", i++);
+	createTexture("./Resources/Characters/Punk/Punk_punch.png", "punk_punch", i++);
+	createTexture("./Resources/Characters/Punk/Punk_run.png", "punk_run", i++);
+	createTexture("./Resources/Characters/Punk/Punk_run_attack.png", "punk_run_attack", i++);
+	
+	//Cyborg
+	createTexture("./Resources/Characters/Cyborg/Cyborg_attack1.png", "cyborg_attack1", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_attack2.png", "cyborg_attack2", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_attack3.png", "cyborg_attack3", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_climb.png", "cyborg_climb", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_death.png", "cyborg_death", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_doublejump.png", "cyborg_doublejump", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_hurt.png", "cyborg_hurt", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_idle.png", "cyborg_idle", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_jump.png", "cyborg_jump", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_punch.png", "cyborg_punch", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_run.png", "cyborg_run", i++);
+	createTexture("./Resources/Characters/Cyborg/Cyborg_run_attack.png", "cyborg_run_attack", i++);
 
 	//Tiles
-	createTexture("./Resources/Components/Tiles/Tile_05.png", "tileTop", 5);
-	createTexture("./Resources/Components/Tiles/Tile_06.png", "tileLeft", 6);
-	createTexture("./Resources/Components/Tiles/Tile_07.png", "tileMiddle", 7);
-	createTexture("./Resources/Components/Tiles/Tile_08.png", "tileRight", 8);
+	createTexture("./Resources/Components/Tiles/Tile_05.png", "tileTop", i++);
+	createTexture("./Resources/Components/Tiles/Tile_06.png", "tileLeft", i++);
+	createTexture("./Resources/Components/Tiles/Tile_07.png", "tileMiddle", i++);
+	createTexture("./Resources/Components/Tiles/Tile_08.png", "tileRight", i++);
 
 	//Background Day
-	createTexture("./Resources/Components/Background/Day/1.png", "DayPart1", 10);
-	createTexture("./Resources/Components/Background/Day/2.png", "DayPart2", 11);
-	createTexture("./Resources/Components/Background/Day/3.png", "DayPart3", 12);
-	createTexture("./Resources/Components/Background/Day/4.png", "DayPart4", 13);
-	createTexture("./Resources/Components/Background/Day/5.png", "DayPart5", 14);
+	createTexture("./Resources/Components/Background/Day/1.png", "DayPart1", i++);
+	createTexture("./Resources/Components/Background/Day/2.png", "DayPart2", i++);
+	createTexture("./Resources/Components/Background/Day/3.png", "DayPart3", i++);
+	createTexture("./Resources/Components/Background/Day/4.png", "DayPart4", i++);
+	createTexture("./Resources/Components/Background/Day/5.png", "DayPart5", i++);
 
 	//Background Night
-	createTexture("./Resources/Components/Background/Night/1.png","NightPart1", 15);
-	createTexture("./Resources/Components/Background/Night/2.png","NightPart2", 16);
-	createTexture("./Resources/Components/Background/Night/3.png","NightPart3", 17);
-	createTexture("./Resources/Components/Background/Night/4.png","NightPart4", 18);
-	createTexture("./Resources/Components/Background/Night/5.png","NightPart5", 19);
+	createTexture("./Resources/Components/Background/Night/1.png","NightPart1", i++);
+	createTexture("./Resources/Components/Background/Night/2.png","NightPart2", i++);
+	createTexture("./Resources/Components/Background/Night/3.png","NightPart3", i++);
+	createTexture("./Resources/Components/Background/Night/4.png","NightPart4", i++);
+	createTexture("./Resources/Components/Background/Night/5.png","NightPart5", i++);
 
 	//Background Illumination
-	createTexture("./Resources/Components/Background/Overlay_illumination.png", "Illumination", 20);
+	createTexture("./Resources/Components/Background/Overlay_illumination.png", "Illumination", 18);
+}
+
+void animationAttack1() {
+	player.texture = textures[player.character + "_attack1"];
+	sprites = 6;
+	//currentSprite = 0;
+}
+void animationAttack2() {
+	player.texture = textures[player.character + "_attack2"];
+	sprites = 8;
+	//currentSprite = 0;
+}
+void animationAttack3() {
+	player.texture = textures[player.character + "_attack3"];
+	sprites = 8;
+	//currentSprite = 0;
+}
+void animationClimb() {
+	player.texture = textures[player.character + "_climb"];
+	sprites = 6;
+	//currentSprite = 0;
+}
+void animationDeath() {
+	player.texture = textures[player.character + "_death"];
+	sprites = 6;
+	//currentSprite = 0;
+}
+void animationDoublejump() {
+	player.texture = textures[player.character + "_doublejump"];
+	sprites = 6;
+	//currentSprite = 0;
+}
+void animationHurt() {
+	player.texture = textures[player.character + "_hurt"];
+	sprites = 2;
+	//currentSprite = 0;
+}
+void animationIdle() {
+	player.texture = textures[player.character + "_idle"];
+	sprites = 4;
+	//currentSprite = 0;
+}
+void animationJump() {
+	player.texture = textures[player.character + "_jump"];
+	sprites = 4;
+	//currentSprite = 0;
+}
+void animationPunch() {
+	player.texture = textures[player.character + "_punch"];
+	sprites = 6;
+	//currentSprite = 0;
+}
+void animationRun() {
+	player.texture = textures[player.character + "_run"];
+	sprites = 6;
+	//currentSprite = 0;
+}
+void animationRunAttack() {
+	player.texture = textures[player.character + "_run_attack"];
+	sprites = 6;
+	//currentSprite = 0;
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include "Object.h"
+#include <string>
 class Character :
     public Object
 {
@@ -8,6 +9,8 @@ public:
     float maxSpeed = 1.0, jmpSpeed = 0.1; 
     float maxJump = 5.0;
     float acceleration = 0.1;
+    char direction = 'r';
+    std::string character = "";
     bool isInAir = false;
     bool isFalling = false;
 
@@ -34,7 +37,7 @@ public:
         glVertex2f(this->coords[0] - this->size / 2, this->coords[3] + this->size / 2);
         glEnd();
     }
-    void renderTex() {
+    void renderTex(int currentSprite, int sprites) {
         glEnable(GL_TEXTURE_2D);
         glBindTexture(GL_TEXTURE_2D, this->texture);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -42,14 +45,26 @@ public:
         glColor3f(this->color[0], this->color[1], this->color[2]);
         //glRectf(this->coords[0] - this->size / 2, this->coords[1] - this->size / 2, this->coords[2] + this->size / 2, this->coords[3] + this->size / 2);
         glBegin(GL_QUADS);
-        glTexCoord2f(0.0, 1.0);
-        glVertex2f(this->coords[0] - this->size / 2, this->coords[1] - this->size / 2);
-        glTexCoord2f(0.5, 1.0);
-        glVertex2f(this->coords[2] + this->size / 2, this->coords[1] - this->size / 2);
-        glTexCoord2f(0.5, 0.0);
-        glVertex2f(this->coords[2] + this->size / 2, this->coords[3] + this->size / 2);
-        glTexCoord2f(0.0, 0.0);
-        glVertex2f(this->coords[0] - this->size / 2, this->coords[3] + this->size / 2);
+        if (this->direction == 'r') {
+            glTexCoord2f((float)(1.0/sprites*currentSprite), 1.0);
+            glVertex2f(this->coords[0] - this->size / 2, this->coords[1] - this->size / 2);
+            glTexCoord2f((float)(1.0 / sprites * (currentSprite+1)), 1.0);
+            glVertex2f(this->coords[2] + this->size / 2, this->coords[1] - this->size / 2);
+            glTexCoord2f((float)(1.0 / sprites * (currentSprite+1)), 0.0);
+            glVertex2f(this->coords[2] + this->size / 2, this->coords[3] + this->size / 2);
+            glTexCoord2f((float)(1.0 / sprites * currentSprite), 0.0);
+            glVertex2f(this->coords[0] - this->size / 2, this->coords[3] + this->size / 2);
+        }
+        else if (this->direction == 'l') {
+            glTexCoord2f((float)(1.0 / sprites * (currentSprite+1)), 1.0);
+            glVertex2f(this->coords[0] - this->size / 2, this->coords[1] - this->size / 2);
+            glTexCoord2f((float)(1.0 / sprites * currentSprite), 1.0);
+            glVertex2f(this->coords[2] + this->size / 2, this->coords[1] - this->size / 2);
+            glTexCoord2f((float)(1.0 / sprites * currentSprite), 0.0);
+            glVertex2f(this->coords[2] + this->size / 2, this->coords[3] + this->size / 2);
+            glTexCoord2f((float)(1.0 / sprites * (currentSprite+1)), 0.0);
+            glVertex2f(this->coords[0] - this->size / 2, this->coords[3] + this->size / 2);
+        }
         glEnd();
         glDisable(GL_TEXTURE_2D);
     }
