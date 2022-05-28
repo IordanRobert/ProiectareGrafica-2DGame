@@ -30,10 +30,13 @@
     <ClCompile Include="lodepng.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\iorda\Downloads\picopng.cpp">
+    <ClCompile Include="WorldPhysics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WorldPhysics.cpp">
+    <ClCompile Include="picopng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WorldPhysics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

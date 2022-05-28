@@ -11,6 +11,7 @@
 #include "lodepng.h"
 #include "picopng.h"
 #include "WorldPhysics.h"
+#include "Platform.h"
 
 float movementX = 0.0;
 float movementY = 0.0;
@@ -22,11 +23,24 @@ double blue = 0.0;
 int screenWidth = 576*2;
 int screenHeight = 324*2;
 
-Character player(48.0, 5.0, 6.0);
+std::string currentMenu = "menu";
+void menuPage_mouseHandler(int, int);
+void characterSelection_mouseHandler(int, int);
+
+Character player(48.0, 200.0, 200.0, 20.0, 150.0, 5.0, "biker"); // biker / punk / cyborg
+
+/* CHARACTER STATS */
+// { TOTALHEALTH, HEALTH, DAMAGE, JUMP, SPEED }
+float bikerStats[5] = { 200.0, 200.0,  20.0, 175.0, 5.0 };
+float punkStats[5] = { 130.0, 130.0,  25.0, 200.0, 7.0 };
+float cyborgStats[5] = { 200.0, 200.0,  35.0, 150.0, 3.5 };
+
+float startingY = 0.0;
+void checkGround();
 int sprites = 8;
 int currentSprite = 0;
 int animationCounter = 0;
-#define ANIMATION_DELAY 20
+#define ANIMATION_DELAY 15
 void animationAttack1();
 void animationAttack2();
 void animationAttack3();
@@ -36,34 +50,116 @@ void animationDoublejump();
 void animationHurt();
 void animationIdle();
 void animationJump();
+void animationFalling();
 void animationPunch();
 void animationRun();
 void animationRunAttack();
+int animationRepeat();
+int animationDoOnce();
 
-Object ground;
-Object platformLeft;
-Object platformRight;
-Object platformCenter;
+//HUD START
+Object HUDStats_box;
+Object HUDStats_box_detail;
+Object HUDStats_character_box;
+Character HUDStats_character;
+Object HUDStats_health_box;
+Object HUDStats_health_percent;
 
+Object HUDScore_box;
+Object HUDScore_box_detail;
+Object HUDScore_score;
+int score = 0;
+//HUD END
+
+//PLATFORMS START
+Platform ground(-screenWidth / 2, -screenHeight / 2 + 32, screenWidth / 32);
+Platform platformLeft(-screenWidth / 2 + 100, -screenHeight / 2 + 32 + 150, 5);
+Platform platformRight(screenWidth / 2 - 200, -screenHeight / 2 + 32 + 150, 5);
+Platform platformCenter(-screenWidth/2 + 310, -screenHeight/2+32 + 250, 2);
+//PLATFORMS END
+
+//BACKGROUND START
 Object bgPart1;
 Object bgPart2;
 Object bgPart3;
 Object bgPart4;
 Object bgPart5;
 Object bgIllumination;
+//BACKGROUND END
 
-float gravityForce = 2.0;
-bool gravityActive = true;
+// MENU START
+float menuLeftAxis = 0;
+float menuRightAxis = 0;
+float menuCenterAxis = 0;
 
-bool keyStates[256];
+float buttonLeftMargin = 0;
+float buttonRightMargin = 0;
 
-void init(void);
-void display(void);
+float buttonSpacing = 0;
+float buttonPadding = 0;
+
+Object menuOption1Box;
+Object menuOption2Box;
+Object menuOption3Box;
+Object menuOption4Box;
+// MENU END
+
+/* CHARACTER PAGE START
+	1. Select character
+	2. See character animations
+	3. See character stats */
+
+Object characterSelectButton_biker;
+Object characterSelectButton_punk;
+Object characterSelectButton_cyborg;
+
+Object characterSelect_stats_health_background;
+Object characterSelect_stats_damage_background;
+Object characterSelect_stats_jumpPower_background;
+Object characterSelect_stats_speed_background;
+
+Object characterSelect_stats_health;
+Object characterSelect_stats_damage;
+Object characterSelect_stats_jumpPower;
+Object characterSelect_stats_speed;
+
+Object characterSelectButton_idle;
+Object characterSelectButton_attack1;
+Object characterSelectButton_attack2;
+Object characterSelectButton_attack3;
+Object characterSelectButton_climb;
+Object characterSelectButton_death;
+Object characterSelectButton_jump;
+Object characterSelectButton_doubleJump;
+Object characterSelectButton_hurt;
+Object characterSelectButton_punch;
+Object characterSelectButton_run;
+Object characterSelectButton_runAttack;
+
+/* CHARACTER PAGE END */
+
+bool keyStates[256] = { 0 };
+
+void initWindow(void);
+
+void initMenu(void);
+void displayMenu(void);
+
+void initGame(void);
+void displayGame(void);
+
+void initCharacterSelection(void);
+void displayCharacterSelection(void);
+
 void reshape(int w, int h);
 void spinDisplay(void);
 
 void gravity();
+float gravityForce = 3.0;
+bool gravityActive = false;
+
 void controls();
+bool controlsActive = false;
 
 void mouse(int button, int state, int x, int y);
 void keyUp(unsigned char key, int x, int y);
@@ -89,15 +185,18 @@ int main(int argc, char** argv)
 	glutInitWindowSize(screenWidth, screenHeight);
 	glutCreateWindow("Platformer");
 
-	init();
+	initWindow();
+	initMenu();
+	//initGame();
 
 	//initRendering("sponge24bit.bmp");
 
-	glutDisplayFunc(display);
+	glutDisplayFunc(displayMenu);
+	//glutDisplayFunc(displayGame);
 
-	//glutReshapeFunc(reshape);
+	glutReshapeFunc(reshape);
 
-	//glutMouseFunc(mouse);
+	glutMouseFunc(mouse);
 	glutKeyboardFunc(keyDown);
 	glutKeyboardUpFunc(keyUp);
 
@@ -107,18 +206,94 @@ int main(int argc, char** argv)
 	return 0;
 }
 
-void init(void)
-{
+void initWindow(void) {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glPointSize(1.0);
 	glShadeModel(GL_SMOOTH);
 	gluOrtho2D(-screenWidth / 2, screenWidth / 2, -screenHeight / 2, screenHeight / 2);
+}
+
+void initMenu(void) {
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+
+	initButtons();
+	initEntities();
+
+	player.size = 48.0;
+
+	gravityActive = false;
+	controlsActive = false;
+
+	menuLeftAxis = -screenWidth / 6;
+	menuRightAxis = screenWidth / 6;
+	menuCenterAxis = abs(menuLeftAxis) - abs(menuRightAxis);
+
+	buttonLeftMargin = -screenWidth / 9;
+	buttonRightMargin = screenWidth / 9;
+
+	buttonSpacing = 1.5;
+	buttonPadding = buttonSpacing * 6;
+
+	menuOption1Box.coords[0] = buttonLeftMargin;
+	menuOption1Box.coords[1] = -0 * 18 * 2 * buttonSpacing - buttonPadding;
+	menuOption1Box.coords[2] = buttonRightMargin;
+	menuOption1Box.coords[3] = -0 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	menuOption1Box.color[0] = 0;
+	menuOption1Box.color[1] = 128;
+	menuOption1Box.color[2] = 128;
+
+	menuOption2Box.coords[0] = buttonLeftMargin;
+	menuOption2Box.coords[1] = -1 * 18 * 2 * buttonSpacing - buttonPadding;
+	menuOption2Box.coords[2] = buttonRightMargin;
+	menuOption2Box.coords[3] = -1 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	menuOption2Box.color[0] = 0;
+	menuOption2Box.color[1] = 128;
+	menuOption2Box.color[2] = 128;
+
+	menuOption3Box.coords[0] = buttonLeftMargin;
+	menuOption3Box.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
+	menuOption3Box.coords[2] = buttonRightMargin;
+	menuOption3Box.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	menuOption3Box.color[0] = 0;
+	menuOption3Box.color[1] = 128;
+	menuOption3Box.color[2] = 128;
+
+	menuOption4Box.coords[0] = buttonLeftMargin;
+	menuOption4Box.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
+	menuOption4Box.coords[2] = buttonRightMargin;
+	menuOption4Box.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	menuOption4Box.color[0] = 0;
+	menuOption4Box.color[1] = 128;
+	menuOption4Box.color[2] = 128;
+	
+	addButtons(menuOption1Box.coords);
+	addButtons(menuOption2Box.coords);
+	addButtons(menuOption3Box.coords);
+	addButtons(menuOption4Box.coords);
+
+	//printButtons();
+}
+
+void initGame(void) {
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+
+	score = 0;
+
+	gravityActive = true;
+	controlsActive = true;
 
 	loadTextures();
 
+	initButtons();
 	initEntities();
+
+	player.size = 48.0;
+	player.health = player.totalHealth;
+	player.move(0, 0);
+	movementX = 0;
+	movementY = 0;
 	
 	/* BACKGROUND */
 	bgPart1.coords[0] = -screenWidth / 2;
@@ -157,41 +332,330 @@ void init(void)
 	bgIllumination.coords[3] = screenWidth / 2;
 	bgIllumination.texture = textures["Illumination"];
 
-	/* GROUND */
-	//glRectf(-screenWidth / 2, -screenHeight / 2, screenWidth / 2, -screenHeight / 2 + 20);
-	ground.coords[0] = -screenWidth / 2.0;
-	ground.coords[1] = -screenHeight / 2.0;
-	ground.coords[2] = screenWidth / 2.0;
-	ground.coords[3] = -screenHeight / 2.0 + 32;
-	ground.texture = textures["tileTop"];
-	addEntities(ground.coords);
+	/* HUD STATS */
+	HUDStats_box.coords[0] = -screenWidth / 2;
+	HUDStats_box.coords[1] = screenHeight / 2;
+	HUDStats_box.coords[2] = -screenWidth / 4;
+	HUDStats_box.coords[3] = screenHeight / 2 - 42;
+	HUDStats_box.color[0] = 43;
+	HUDStats_box.color[1] = 43;
+	HUDStats_box.color[2] = 43;
 
+	HUDStats_character_box.coords[0] = HUDStats_box.coords[0] + 5;
+	HUDStats_character_box.coords[1] = HUDStats_box.coords[1] - 5;
+	HUDStats_character_box.coords[2] = HUDStats_character_box.coords[0] + 32;
+	HUDStats_character_box.coords[3] = HUDStats_character_box.coords[1] - 32;
+	HUDStats_character_box.color[0] = 0.2;
+	HUDStats_character_box.color[1] = 0.2;
+	HUDStats_character_box.color[2] = 0.2;
+
+	HUDStats_character.size = 36;
+	HUDStats_character.character = player.character;
+	HUDStats_character.animation = "_idle";
+	HUDStats_character.texture = textures[HUDStats_character.character + HUDStats_character.animation];
+	HUDStats_character.move(-screenWidth / 2 + HUDStats_character.size/1.5 + 5, screenHeight / 2 - HUDStats_character.size / 2 + 1);
+
+	HUDStats_health_box.coords[0] = HUDStats_character_box.coords[2] + 5;
+	HUDStats_health_box.coords[1] = HUDStats_box.coords[1] - 5;
+	HUDStats_health_box.coords[2] = HUDStats_box.coords[2] - 5;
+	HUDStats_health_box.coords[3] = HUDStats_character_box.coords[1] - 32;
+	HUDStats_health_box.color[0] = 0.2;
+	HUDStats_health_box.color[1] = 0.2;
+	HUDStats_health_box.color[2] = 0.2;
+
+	HUDStats_health_percent.coords[0] = HUDStats_health_box.coords[0] + 5;
+	HUDStats_health_percent.coords[1] = HUDStats_health_box.coords[1] - 5;
+	HUDStats_health_percent.coords[2] = HUDStats_health_box.coords[2] - 5;
+	HUDStats_health_percent.coords[3] = HUDStats_health_box.coords[3] + 5;
+
+	/* HUD SCORE */
+	HUDScore_box.coords[0] = screenWidth / 2;
+	HUDScore_box.coords[1] = screenHeight / 2;
+	HUDScore_box.coords[2] = screenWidth / 3;
+	HUDScore_box.coords[3] = screenHeight / 2 - 42;
+	HUDScore_box.color[0] = 43;
+	HUDScore_box.color[1] = 43;
+	HUDScore_box.color[2] = 43;
+
+	HUDScore_score.coords[0] = HUDScore_box.coords[0] - 5;
+	HUDScore_score.coords[1] = HUDScore_box.coords[1] - 5;
+	HUDScore_score.coords[2] = HUDScore_box.coords[0] + (HUDScore_box.coords[1] - HUDScore_box.coords[0]) / 2;
+	HUDScore_score.coords[3] = HUDScore_box.coords[3] + 5;
+	HUDScore_score.color[0] = 0.2;
+	HUDScore_score.color[1] = 0.2;
+	HUDScore_score.color[2] = 0.2;
+
+	/* GROUND */
+	ground.texture[0] = textures["tileLeft"];
+	ground.texture[1] = textures["tileMiddle"];
+	ground.texture[2] = textures["tileRight"];
+	ground.calcHitbox();
+	addEntities(ground.hitboxCoords);
 
 	/* PLATFORMS */
-	//glRectf(-screenWidth / 2 + 100, -screenHeight / 2 + 150, -screenWidth / 2 + 300, -screenHeight / 2 + 20 + 150);
-	platformLeft.coords[0] = -screenWidth / 2.0 + 100;
-	platformLeft.coords[1] = -screenHeight / 2.0 + 150;
-	platformLeft.coords[2] = -screenWidth / 2.0 + 300;
-	platformLeft.coords[3] = -screenHeight / 2.0 + 20 + 150;
-	platformLeft.texture = textures["tileTop"];
-	addEntities(platformLeft.coords);
+	platformLeft.texture[0] = textures["tileLeft"];
+	platformLeft.texture[1] = textures["tileMiddle"];
+	platformLeft.texture[2] = textures["tileRight"];
+	platformLeft.calcHitbox();
+	addEntities(platformLeft.hitboxCoords);
 
-	//glRectf(screenWidth / 2 - 100, -screenHeight / 2 + 150, screenWidth / 2 - 300, -screenHeight / 2 + 20 + 150);
-	platformRight.coords[0] = screenWidth / 2.0 - 100;
-	platformRight.coords[1] = -screenHeight / 2.0 + 150;
-	platformRight.coords[2] = screenWidth / 2.0 - 300;
-	platformRight.coords[3] = -screenHeight / 2.0 + 20 + 150;
-	platformRight.texture = textures["tileTop"];
-	addEntities(platformRight.coords);
+	platformRight.texture[0] = textures["tileLeft"];
+	platformRight.texture[1] = textures["tileMiddle"];
+	platformRight.texture[2] = textures["tileRight"];
+	platformRight.calcHitbox();
+	addEntities(platformRight.hitboxCoords);
 
-	//glRectf(-screenWidth / 2 + 310, -screenHeight / 2 + 250, screenWidth / 2 - 310, -screenHeight / 2 + 20 + 250);
-	platformCenter.coords[0] = -screenWidth / 2.0 + 310;
-	platformCenter.coords[1] = -screenHeight / 2.0 + 250;
-	platformCenter.coords[2] = screenWidth / 2.0 - 310;
-	platformCenter.coords[3] = -screenHeight / 2.0 + 20 + 250;
-	platformCenter.texture = textures["tileTop"];
-	addEntities(platformCenter.coords);
-	
+	platformCenter.texture[0] = textures["tileLeft"];
+	platformCenter.texture[1] = textures["tileMiddle"];
+	platformCenter.texture[2] = textures["tileRight"];
+	platformCenter.calcHitbox();
+	addEntities(platformCenter.hitboxCoords);
+
+	//printEntities();
+}
+
+void initCharacterSelection() {
+
+	initButtons();
+	initEntities();
+
+	loadTextures();
+
+	animationIdle();
+
+	gravityActive = false;
+	controlsActive = false;
+
+	player.size = player.size * 5;
+	glClearColor(0.2, 0.2, 0.2, 1.0);
+
+	menuLeftAxis = 0;
+	menuRightAxis = screenWidth / 2;
+	menuCenterAxis = (abs(menuRightAxis) - abs(menuLeftAxis)) / 2;
+
+	buttonLeftMargin = 0 + screenWidth / 9;
+	buttonRightMargin = screenWidth / 2 - screenWidth / 9;
+
+	buttonSpacing = 1.5;
+	buttonPadding = buttonSpacing * 6;
+
+	characterSelectButton_biker.coords[0] = buttonLeftMargin;
+	characterSelectButton_biker.coords[1] = 3 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_biker.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
+	characterSelectButton_biker.coords[3] = 3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_biker.color[0] = 0;
+	characterSelectButton_biker.color[1] = 128;
+	characterSelectButton_biker.color[2] = 128;
+
+	characterSelectButton_punk.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
+	characterSelectButton_punk.coords[1] = 3 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_punk.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
+	characterSelectButton_punk.coords[3] = 3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_punk.color[0] = 0;
+	characterSelectButton_punk.color[1] = 128;
+	characterSelectButton_punk.color[2] = 128;
+
+	characterSelectButton_cyborg.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
+	characterSelectButton_cyborg.coords[1] = 3 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_cyborg.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
+	characterSelectButton_cyborg.coords[3] = 3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_cyborg.color[0] = 0;
+	characterSelectButton_cyborg.color[1] = 128;
+	characterSelectButton_cyborg.color[2] = 128;
+
+	/* CHARACTER STATUS */
+	// stats Background
+
+	characterSelect_stats_health_background.coords[0] = buttonLeftMargin;
+	characterSelect_stats_health_background.coords[1] = 2 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelect_stats_health_background.coords[2] = buttonRightMargin;
+	characterSelect_stats_health_background.coords[3] = 2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelect_stats_health_background.color[0] = 0.2;
+	characterSelect_stats_health_background.color[1] = 0.2;
+	characterSelect_stats_health_background.color[2] = 0.2;
+
+	characterSelect_stats_damage_background.coords[0] = buttonLeftMargin;
+	characterSelect_stats_damage_background.coords[1] = 1 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelect_stats_damage_background.coords[2] = buttonRightMargin;
+	characterSelect_stats_damage_background.coords[3] = 1 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelect_stats_damage_background.color[0] = 0.2;
+	characterSelect_stats_damage_background.color[1] = 0.2;
+	characterSelect_stats_damage_background.color[2] = 0.2;
+
+	characterSelect_stats_jumpPower_background.coords[0] = buttonLeftMargin;
+	characterSelect_stats_jumpPower_background.coords[1] = 0 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelect_stats_jumpPower_background.coords[2] = buttonRightMargin;
+	characterSelect_stats_jumpPower_background.coords[3] = 0 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelect_stats_jumpPower_background.color[0] = 0.2;
+	characterSelect_stats_jumpPower_background.color[1] = 0.2;
+	characterSelect_stats_jumpPower_background.color[2] = 0.2;
+
+	characterSelect_stats_speed_background.coords[0] = buttonLeftMargin;
+	characterSelect_stats_speed_background.coords[1] = -1 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelect_stats_speed_background.coords[2] = buttonRightMargin;
+	characterSelect_stats_speed_background.coords[3] = -1 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelect_stats_speed_background.color[0] = 0.2;
+	characterSelect_stats_speed_background.color[1] = 0.2;
+	characterSelect_stats_speed_background.color[2] = 0.2;
+
+	// Stats lines
+
+	characterSelect_stats_health.coords[0] = buttonLeftMargin + 10;
+	characterSelect_stats_health.coords[1] = 2 * 18 * 2 * buttonSpacing - buttonPadding + 10;
+	characterSelect_stats_health.coords[2] = buttonRightMargin - 10;
+	characterSelect_stats_health.coords[3] = 2 * 18 * 2 * buttonSpacing + 14 + buttonPadding - 10;
+	characterSelect_stats_health.color[0] = 0;
+	characterSelect_stats_health.color[1] = 255;
+	characterSelect_stats_health.color[2] = 0;
+
+	characterSelect_stats_damage.coords[0] = buttonLeftMargin + 10;
+	characterSelect_stats_damage.coords[1] = 1 * 18 * 2 * buttonSpacing - buttonPadding + 10;
+	characterSelect_stats_damage.coords[2] = buttonRightMargin - 10;
+	characterSelect_stats_damage.coords[3] = 1 * 18 * 2 * buttonSpacing + 14 + buttonPadding - 10;
+	characterSelect_stats_damage.color[0] = 255;
+	characterSelect_stats_damage.color[1] = 0;
+	characterSelect_stats_damage.color[2] = 0;
+
+	characterSelect_stats_jumpPower.coords[0] = buttonLeftMargin + 10;
+	characterSelect_stats_jumpPower.coords[1] = 0 * 18 * 2 * buttonSpacing - buttonPadding + 10; 
+	characterSelect_stats_jumpPower.coords[2] = buttonRightMargin - 10;
+	characterSelect_stats_jumpPower.coords[3] = 0 * 18 * 2 * buttonSpacing + 14 + buttonPadding - 10;
+	characterSelect_stats_jumpPower.color[0] = 255;
+	characterSelect_stats_jumpPower.color[1] = 0;
+	characterSelect_stats_jumpPower.color[2] = 255;
+
+	characterSelect_stats_speed.coords[0] = buttonLeftMargin + 10;
+	characterSelect_stats_speed.coords[1] = -1 * 18 * 2 * buttonSpacing - buttonPadding + 10;
+	characterSelect_stats_speed.coords[2] = buttonRightMargin - 10;
+	characterSelect_stats_speed.coords[3] = -1 * 18 * 2 * buttonSpacing + 14 + buttonPadding - 10;
+	characterSelect_stats_speed.color[0] = 255;
+	characterSelect_stats_speed.color[1] = 255;
+	characterSelect_stats_speed.color[2] = 0;
+
+	/* ANIMATION BUTTONS BOXES */
+	characterSelectButton_attack1.coords[0] = buttonLeftMargin;
+	characterSelectButton_attack1.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_attack1.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
+	characterSelectButton_attack1.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_attack1.color[0] = 0;
+	characterSelectButton_attack1.color[1] = 128;
+	characterSelectButton_attack1.color[2] = 128;
+
+	characterSelectButton_attack2.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
+	characterSelectButton_attack2.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_attack2.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
+	characterSelectButton_attack2.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_attack2.color[0] = 0;
+	characterSelectButton_attack2.color[1] = 128;
+	characterSelectButton_attack2.color[2] = 128;
+
+	characterSelectButton_attack3.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
+	characterSelectButton_attack3.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_attack3.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
+	characterSelectButton_attack3.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_attack3.color[0] = 0;
+	characterSelectButton_attack3.color[1] = 128;
+	characterSelectButton_attack3.color[2] = 128;
+
+	//
+
+	characterSelectButton_climb.coords[0] = buttonLeftMargin;
+	characterSelectButton_climb.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_climb.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
+	characterSelectButton_climb.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_climb.color[0] = 0;
+	characterSelectButton_climb.color[1] = 128;
+	characterSelectButton_climb.color[2] = 128;
+
+	characterSelectButton_jump.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
+	characterSelectButton_jump.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_jump.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
+	characterSelectButton_jump.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_jump.color[0] = 0;
+	characterSelectButton_jump.color[1] = 128;
+	characterSelectButton_jump.color[2] = 128;
+
+	characterSelectButton_doubleJump.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
+	characterSelectButton_doubleJump.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_doubleJump.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
+	characterSelectButton_doubleJump.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_doubleJump.color[0] = 0;
+	characterSelectButton_doubleJump.color[1] = 128;
+	characterSelectButton_doubleJump.color[2] = 128;
+
+	//
+
+	characterSelectButton_death.coords[0] = buttonLeftMargin;
+	characterSelectButton_death.coords[1] = -4 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_death.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
+	characterSelectButton_death.coords[3] = -4 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_death.color[0] = 0;
+	characterSelectButton_death.color[1] = 128;
+	characterSelectButton_death.color[2] = 128;
+
+	characterSelectButton_idle.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
+	characterSelectButton_idle.coords[1] = -4 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_idle.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
+	characterSelectButton_idle.coords[3] = -4 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_idle.color[0] = 0;
+	characterSelectButton_idle.color[1] = 128;
+	characterSelectButton_idle.color[2] = 128;
+
+	characterSelectButton_hurt.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
+	characterSelectButton_hurt.coords[1] = -4 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_hurt.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
+	characterSelectButton_hurt.coords[3] = -4 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_hurt.color[0] = 0;
+	characterSelectButton_hurt.color[1] = 128;
+	characterSelectButton_hurt.color[2] = 128;
+
+	//
+
+	characterSelectButton_punch.coords[0] = buttonLeftMargin;
+	characterSelectButton_punch.coords[1] = -5 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_punch.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
+	characterSelectButton_punch.coords[3] = -5 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_punch.color[0] = 0;
+	characterSelectButton_punch.color[1] = 128;
+	characterSelectButton_punch.color[2] = 128;
+
+	characterSelectButton_run.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
+	characterSelectButton_run.coords[1] = -5 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_run.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
+	characterSelectButton_run.coords[3] = -5 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_run.color[0] = 0;
+	characterSelectButton_run.color[1] = 128;
+	characterSelectButton_run.color[2] = 128;
+
+	characterSelectButton_runAttack.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
+	characterSelectButton_runAttack.coords[1] = -5 * 18 * 2 * buttonSpacing - buttonPadding;
+	characterSelectButton_runAttack.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
+	characterSelectButton_runAttack.coords[3] = -5 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
+	characterSelectButton_runAttack.color[0] = 0;
+	characterSelectButton_runAttack.color[1] = 128;
+	characterSelectButton_runAttack.color[2] = 128;
+
+	addButtons(characterSelectButton_biker.coords);
+	addButtons(characterSelectButton_punk.coords);
+	addButtons(characterSelectButton_cyborg.coords);
+
+	addButtons(characterSelectButton_attack1.coords);
+	addButtons(characterSelectButton_attack2.coords);
+	addButtons(characterSelectButton_attack3.coords);
+
+	addButtons(characterSelectButton_climb.coords);
+	addButtons(characterSelectButton_jump.coords);
+	addButtons(characterSelectButton_doubleJump.coords);
+
+	addButtons(characterSelectButton_death.coords);
+	addButtons(characterSelectButton_idle.coords);
+	addButtons(characterSelectButton_hurt.coords);
+
+	addButtons(characterSelectButton_punch.coords);
+	addButtons(characterSelectButton_run.coords);
+	addButtons(characterSelectButton_runAttack.coords);
+
+	//printButtons();
 }
 
 void gravity() {
@@ -207,21 +671,90 @@ void gravity() {
 }
 
 void lazyJmp() {
-	if (!collisionUp(movementX, movementY, player) && gravityActive && player.isInAir && !player.isFalling) {
-		//std::cout << "here" << std::endl;
-		for (float i = 0; i <= player.maxJump; i += 0.1) {
+	if (!collisionUp(movementX, movementY, player) && player.isJumping && !player.isFalling) {
+		if (player.animation != "_jump") animationJump();
+		for (float i = 0; i <= player.maxJump/(player.maxJump/5); i += 0.1) {
 			if (!collisionUp(movementX, movementY, player)) {
+				gravityActive = false;
 				movementY += 0.1;
 				player.move(movementX, movementY);
-				//if (i = player.maxJump) player.isFalling = true;
+				//printf("Starting Jump at: %0.1f (jumping: %d / falling: %d / gravity: %d)\n", startingY, player.isJumping, player.isFalling, gravityActive);
+				if (movementY >= startingY + player.maxJump) {
+					currentSprite = 2;
+					if (player.animation != "_jump") animationFalling();
+					gravityActive = true;
+					player.isJumping = false;
+					player.isFalling = true;
+				}
 			}
-			else break;
+			else {
+				currentSprite = 2;
+				if (player.animation != "_jump") animationFalling();
+				gravityActive = true;
+				player.isJumping = false;
+				player.isFalling = true;
+			}
 		}
-		player.isInAir = false;
 	}
 }
 
-void display(void)
+void displayMenu(void) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glPushMatrix();
+
+	glColor3ub(43, 43, 43);
+	glBegin(GL_QUADS);
+	glVertex2f(menuLeftAxis, -screenHeight / 2);
+	glVertex2f(menuRightAxis, -screenHeight / 2);
+	glVertex2f(menuRightAxis, screenHeight / 2);
+	glVertex2f(menuLeftAxis, screenHeight / 2);
+	glEnd();
+
+	// MENU BUTTONS STRINGS
+	std::string menuOption1 = "PLAY";
+	float menuOption1Center = menuCenterAxis - 18 * (menuOption1.length() - 1) / 2 + 5;
+	std::string menuOption2 = "CHARACTERS";
+	float menuOption2Center = menuCenterAxis - 18 * (menuOption2.length() - 1) / 2 + 18;
+	std::string menuOption3 = "SETTINGS";
+	float menuOption3Center = menuCenterAxis - 18 * (menuOption3.length() - 1) / 2 + 18;
+	std::string menuOption4 = "EXIT";
+	float menuOption4Center = menuCenterAxis - 18 * (menuOption4.length() - 1) / 2 + 7;
+
+	menuOption1Box.render3ub();
+	menuOption2Box.render3ub();
+	menuOption3Box.render3ub();
+	menuOption4Box.render3ub();
+
+	//RENDER MENU BUTTONS STRINGS
+	glColor3ub(43, 43, 43);
+	glRasterPos2i(menuOption1Center, 0);
+	for (int i = 0; i < menuOption1.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, menuOption1[i]);
+	}
+
+	glRasterPos2i(menuOption2Center, -18 * 2 * buttonSpacing);
+	for (int i = 0; i < menuOption2.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, menuOption2[i]);
+	}
+
+	glRasterPos2i(menuOption3Center, -18 * 4 * buttonSpacing);
+	for (int i = 0; i < menuOption3.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, menuOption3[i]);
+	}
+
+	glRasterPos2i(menuOption4Center, -18 * 6 * buttonSpacing);
+	for (int i = 0; i < menuOption4.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, menuOption4[i]);
+	}
+
+	glutPostRedisplay();
+	glPopMatrix();
+	glutSwapBuffers();
+
+	//printf("X: %d / Y: %d\n", movementX, movementY);
+}
+
+void displayGame(void)
 { 
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPushMatrix();
@@ -233,53 +766,318 @@ void display(void)
 	bgPart5.renderTex();
 	//bgIllumination.renderTex();
 
-	player.color[0] = 1.0;
-	player.color[1] = 1.0;
-	player.color[2] = 1.0;
-	player.character = "biker";
-	animationRunAttack();
-	player.renderTex(currentSprite, sprites);
-	if (animationCounter >= ANIMATION_DELAY) {
-		animationCounter = 0;
-		currentSprite > sprites ? (currentSprite = 0) : currentSprite++;
-	}
-	animationCounter++;
-	/*float playerCX = movementX;
-	float playerCY = movementY;
+	HUDStats_box.render3ub();
+	HUDStats_character_box.render3f();
+	HUDStats_character.renderTex(0, 4);
+	HUDStats_health_box.render3f();
 
-	glPointSize(10.0);
-	glColor3f(1.0, 0.0, 0.0);
-	glRectf(playerCX-2, playerCY-2, playerCX+2, playerCY+2);*/
+	HUDStats_health_percent.coords[2] = HUDStats_health_box.coords[0] - 5 + (HUDStats_health_box.coords[2] - 5 - (HUDStats_health_box.coords[0] - 5)) / player.totalHealth * player.health;
+	if (HUDStats_health_percent.coords[2] < HUDStats_health_percent.coords[0]) HUDStats_health_percent.coords[2] = HUDStats_health_percent.coords[0]+1;
+	
+	HUDStats_health_percent.color[0] = 255 - player.health / (player.totalHealth / 255);
+	HUDStats_health_percent.color[1] = player.health / (player.totalHealth / 255);
+	HUDStats_health_percent.color[2] = 0;
+
+	HUDStats_health_percent.render3ub();
+
+	std::string HUDStats_health_string = std::to_string((int)player.health) + "/" + std::to_string((int)player.totalHealth);
+	glColor3ub(43, 43, 43);
+	glRasterPos2i(HUDStats_health_box.coords[2] - (HUDStats_health_box.coords[2] - HUDStats_health_box.coords[0]) / 2 - 30, HUDStats_health_box.coords[3] + 10.5);
+	for (int i = 0; i < HUDStats_health_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, HUDStats_health_string[i]);
+	}
+
+	HUDScore_box.render3ub();
+	HUDScore_score.render3f();
+
+	std::string HUDScore_string = "Score:";
+	glColor3ub(250, 43, 120);
+	glRasterPos2i(HUDScore_box.coords[2] + 5, HUDScore_box.coords[3] + 14);
+	for (int i = 0; i < HUDScore_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, HUDScore_string[i]);
+	}
+
+	std::string HUDScore_score_string = std::to_string(score);
+	glColor3ub(250, 43, 120);
+	glRasterPos2i(HUDScore_score.coords[2] + 5, HUDScore_box.coords[3] + 14);
+	for (int i = 0; i < HUDScore_score_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, HUDScore_score_string[i]);
+	}
+
+	score++;
+
+	player.renderTex(currentSprite, sprites);
+
+	if (player.health == 0) {
+		controlsActive = false;
+		if (player.animation != "_death") animationDeath();
+		if (animationDoOnce()) animationCounter++;
+	}
+	else {
+		if (!player.isMoving && !player.isAttacking && !player.isJumping && !player.isFalling && !player.isHurt) {
+			if (player.animation != "_idle") animationIdle();
+			if (animationRepeat()) animationCounter++;
+			player.isMoving = false;
+			player.isJumping = false;
+			player.isFalling = false;
+			player.isAttacking = false;
+		}
+
+		if (player.isAttacking) {
+			if (animationDoOnce()) {
+				printf("\ncur:%d total:%d attacking:%d", currentSprite, sprites, player.isAttacking);
+				controlsActive = false;
+				animationCounter++;
+			}
+			else {
+				currentSprite = 0;
+				player.isAttacking = false;
+				controlsActive = true;
+			}
+		}
+
+		if (player.isMoving) {
+			if (animationRepeat()) animationCounter++;
+			else player.isMoving = false;
+		}
+
+		if (!player.isJumping && !collisionDown(movementX, movementY, player)) {
+			if (player.animation != "_jump") animationFalling();
+			player.isFalling = true;
+			player.isFallingCounter++;
+		}
+
+		if (player.isHurt) {
+			if (player.animation != "_hurt") animationHurt();
+			if (animationDoOnce()) animationCounter++;
+			else player.isHurt = false;
+		}
+	}
 
 	ground.renderTex();
 	platformLeft.renderTex();
 	platformRight.renderTex();
 	platformCenter.renderTex();
 
+	glutPostRedisplay();
+	glPopMatrix();
+	glutSwapBuffers();
 
-	//Test
-	/*Object test;
-	test.coords[0] = 0;
-	test.coords[1] = 0;
-	test.coords[2] = 32;
-	test.coords[3] = 32;
-	test.color[0] = 1.0;
-	test.color[1] = 1.0;
-	test.color[2] = 1.0;
-	test.texture = textures["tileTop"];
-	test.renderTex();*/
+	//printf("X: %d / Y: %d\n", movementX, movementY);
+}
+
+void displayCharacterSelection(void) {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glPushMatrix();
+
+	/* PLAYER ZONE */
+	player.renderTex(currentSprite, sprites);
+	//animationIdle();
+	//animationDeath();
+	if (animationRepeat()) ++animationCounter;
+
+	player.move(-screenWidth / 4, 0);
+
+	/* BUTTONS ZONE */
+	glColor3ub(43, 43, 43);
+	glBegin(GL_QUADS);
+	glVertex2f(menuLeftAxis, -screenHeight / 2);
+	glVertex2f(menuRightAxis, -screenHeight / 2);
+	glVertex2f(menuRightAxis, screenHeight / 2);
+	glVertex2f(menuLeftAxis, screenHeight / 2);
+	glEnd();
+
+	characterSelectButton_biker.render3ub();
+	characterSelectButton_punk.render3ub();
+	characterSelectButton_cyborg.render3ub();
+
+	/* RENDER CHARACTER STATS */
+	//stats background
+	characterSelect_stats_health_background.render3f();
+	characterSelect_stats_damage_background.render3f();
+	characterSelect_stats_jumpPower_background.render3f();
+	characterSelect_stats_speed_background.render3f();
+
+	//stats
+	float statsTotal = (buttonRightMargin - 10) - (buttonLeftMargin + 10);
+	if (player.character == "biker") {
+		characterSelect_stats_health.coords[2] = characterSelect_stats_health.coords[0] + statsTotal / 200 * bikerStats[1];
+		characterSelect_stats_damage.coords[2] = characterSelect_stats_damage.coords[0] + statsTotal / 50 * bikerStats[2];
+		characterSelect_stats_jumpPower.coords[2] = characterSelect_stats_jumpPower.coords[0] + statsTotal / 200 * bikerStats[3];
+		characterSelect_stats_speed.coords[2] = characterSelect_stats_speed.coords[0] + statsTotal / 10 * bikerStats[4];
+	} else if (player.character == "punk") {
+		characterSelect_stats_health.coords[2] = characterSelect_stats_health.coords[0] + statsTotal / 200 * punkStats[1];
+		characterSelect_stats_damage.coords[2] = characterSelect_stats_damage.coords[0] + statsTotal / 50 * punkStats[2];
+		characterSelect_stats_jumpPower.coords[2] = characterSelect_stats_jumpPower.coords[0] + statsTotal / 200 * punkStats[3];
+		characterSelect_stats_speed.coords[2] = characterSelect_stats_speed.coords[0] + statsTotal / 10 * punkStats[4];
+	} else if (player.character == "cyborg") {
+		characterSelect_stats_health.coords[2] = characterSelect_stats_health.coords[0] + statsTotal / 200 * cyborgStats[1];
+		characterSelect_stats_damage.coords[2] = characterSelect_stats_damage.coords[0] + statsTotal / 50 * cyborgStats[2];
+		characterSelect_stats_jumpPower.coords[2] = characterSelect_stats_jumpPower.coords[0] + statsTotal / 200 * cyborgStats[3];
+		characterSelect_stats_speed.coords[2] = characterSelect_stats_speed.coords[0] + statsTotal / 10 * cyborgStats[4];
+	}
+
+	characterSelect_stats_health.render3ub();
+	characterSelect_stats_damage.render3ub();
+	characterSelect_stats_jumpPower.render3ub();
+	characterSelect_stats_speed.render3ub();
+
+	//
+
+	characterSelectButton_attack1.render3ub();
+	characterSelectButton_attack2.render3ub();
+	characterSelectButton_attack3.render3ub();
+
+	//
+
+	characterSelectButton_climb.render3ub();
+	characterSelectButton_jump.render3ub();
+	characterSelectButton_doubleJump.render3ub();
+
+	//
+
+	characterSelectButton_death.render3ub();
+	characterSelectButton_idle.render3ub();
+	characterSelectButton_hurt.render3ub();
+
+	//
+
+	characterSelectButton_punch.render3ub();
+	characterSelectButton_run.render3ub();
+	characterSelectButton_runAttack.render3ub();
+
+	// MENU BUTTONS STRINGS
+	std::string characterSelectButton_biker_string = "BIKER";
+	float characterSelectButton_biker_string_center = characterSelectButton_biker.coords[0] + (characterSelectButton_biker.coords[2] - characterSelectButton_biker.coords[0]) / 2 - 25;
+	std::string characterSelectButton_punk_string = "PUNK";
+	float characterSelectButton_punk_string_center = characterSelectButton_punk.coords[0] + (characterSelectButton_punk.coords[2] - characterSelectButton_punk.coords[0]) / 2 - 25;
+	std::string characterSelectButton_cyborg_string = "CYBORG";
+	float characterSelectButton_cyborg_string_center = characterSelectButton_cyborg.coords[0] + (characterSelectButton_cyborg.coords[2] - characterSelectButton_cyborg.coords[0]) / 2 - 40;
+
+	std::string characterSelectButton_attack1_string = "Attack1";
+	float characterSelectButton_attack1_string_center = characterSelectButton_attack1.coords[0] + (characterSelectButton_attack1.coords[2] - characterSelectButton_attack1.coords[0]) / 2 - 40;
+	std::string characterSelectButton_attack2_string = "Attack2";
+	float characterSelectButton_attack2_string_center = characterSelectButton_attack2.coords[0] + (characterSelectButton_attack2.coords[2] - characterSelectButton_attack2.coords[0]) / 2 - 40;
+	std::string characterSelectButton_attack3_string = "Attack3";
+	float characterSelectButton_attack3_string_center = characterSelectButton_attack3.coords[0] + (characterSelectButton_attack3.coords[2] - characterSelectButton_attack3.coords[0]) / 2 - 40;
+
+	//
+
+	std::string characterSelectButton_climb_string = "Climb";
+	float characterSelectButton_climb_string_center = characterSelectButton_climb.coords[0] + (characterSelectButton_climb.coords[2] - characterSelectButton_climb.coords[0]) / 2 - 40;
+	std::string characterSelectButton_jump_string = "Jump";
+	float characterSelectButton_jump_string_center = characterSelectButton_jump.coords[0] + (characterSelectButton_jump.coords[2] - characterSelectButton_jump.coords[0]) / 2 - 40;
+	std::string characterSelectButton_doubleJump_string = "D Jump";
+	float characterSelectButton_doubleJump_string_center = characterSelectButton_doubleJump.coords[0] + (characterSelectButton_doubleJump.coords[2] - characterSelectButton_doubleJump.coords[0]) / 2 - 40;
+
+	//
+
+	std::string characterSelectButton_death_string = "Death";
+	float characterSelectButton_death_string_center = characterSelectButton_death.coords[0] + (characterSelectButton_death.coords[2] - characterSelectButton_death.coords[0]) / 2 - 40;
+	std::string characterSelectButton_idle_string = "Idle";
+	float characterSelectButton_idle_string_center = characterSelectButton_idle.coords[0] + (characterSelectButton_idle.coords[2] - characterSelectButton_idle.coords[0]) / 2 - 40;
+	std::string characterSelectButton_hurt_string = "Hurt";
+	float characterSelectButton_hurt_string_center = characterSelectButton_hurt.coords[0] + (characterSelectButton_hurt.coords[2] - characterSelectButton_hurt.coords[0]) / 2 - 40;
+
+	//
+
+	std::string characterSelectButton_punch_string = "Punch";
+	float characterSelectButton_punch_string_center = characterSelectButton_punch.coords[0] + (characterSelectButton_punch.coords[2] - characterSelectButton_punch.coords[0]) / 2 - 40;
+	std::string characterSelectButton_run_string = "Run";
+	float characterSelectButton_run_string_center = characterSelectButton_run.coords[0] + (characterSelectButton_run.coords[2] - characterSelectButton_run.coords[0]) / 2 - 40;
+	std::string characterSelectButton_runAttack_string = "Run Attack";
+	float characterSelectButton_runAttack_string_center = characterSelectButton_runAttack.coords[0] + (characterSelectButton_runAttack.coords[2] - characterSelectButton_runAttack.coords[0]) / 2 - 40;
+
+	/* RENDER STRINGS */
+	glColor3ub(43, 43, 43);
+	glRasterPos2i(characterSelectButton_biker_string_center, 3 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_biker_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_biker_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_punk_string_center, 3 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_punk_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_punk_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_cyborg_string_center, 3 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_cyborg_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_cyborg_string[i]);
+	}
+
+	//
+
+	glRasterPos2i(characterSelectButton_attack1_string_center, -2 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_attack1_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_attack1_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_attack2_string_center, -2 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_attack2_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_attack2_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_attack3_string_center, -2 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_attack3_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_attack3_string[i]);
+	}
+
+	//
+
+	glRasterPos2i(characterSelectButton_climb_string_center, -3 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_climb_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_climb_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_jump_string_center, -3 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_jump_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_jump_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_doubleJump_string_center, -3 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_doubleJump_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_doubleJump_string[i]);
+	}
+
+	//
+
+	glRasterPos2i(characterSelectButton_death_string_center, -4 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_death_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_death_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_idle_string_center, -4 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_idle_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_idle_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_hurt_string_center, -4 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_hurt_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_hurt_string[i]);
+	}
+
+	//
+
+	glRasterPos2i(characterSelectButton_punch_string_center, -5 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_punch_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_punch_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_run_string_center, -5 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_run_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_run_string[i]);
+	}
+
+	glRasterPos2i(characterSelectButton_runAttack_string_center, -5 * 18 * 2 * buttonSpacing);
+	for (int i = 0; i < characterSelectButton_runAttack_string.length(); i++) {
+		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, characterSelectButton_runAttack_string[i]);
+	}
 
 	glutPostRedisplay();
 	glPopMatrix();
 	glutSwapBuffers();
-}
 
-void spinDisplay(void)
-{
-	spin = spin + 2.0;
-	if (spin > 360.0)
-		spin = spin - 360.0;
-	glutPostRedisplay();
+	//printf("X: %f / Y: %f\n", movementX, movementY);
 }
 
 void reshape(int w, int h)
@@ -287,7 +1085,7 @@ void reshape(int w, int h)
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
+	gluOrtho2D(-screenWidth / 2, screenWidth / 2, -screenHeight / 2, screenHeight / 2);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
@@ -296,8 +1094,10 @@ void mouse(int button, int state, int x, int y)
 {
 	switch (button) {
 	case GLUT_LEFT_BUTTON:
-		if (state == GLUT_DOWN)
-			glutIdleFunc(spinDisplay);
+		if (state == GLUT_DOWN) {
+			if (currentMenu == "menu") menuPage_mouseHandler(x, y);
+			else if (currentMenu == "characterSelection") characterSelection_mouseHandler(x, y);
+		}
 		break;
 	case GLUT_MIDDLE_BUTTON:
 		if (state == GLUT_DOWN)
@@ -306,6 +1106,104 @@ void mouse(int button, int state, int x, int y)
 	default:
 		break;
 	}
+}
+
+void menuPage_mouseHandler(int x, int y) {
+	int collisionStatus = 0;
+	collisionStatus = mouseCollisionAABB(x - screenWidth / 2, screenHeight / 2 - y);
+	if (collisionStatus > 0) {
+		printf("%d %d collision detected at button %d\n", x - screenWidth / 2, screenHeight / 2 - y, collisionStatus);
+		switch (collisionStatus) {
+		case 1:
+			currentMenu = "game";
+			initGame();
+			glutDisplayFunc(displayGame);
+			break;
+		case 2:
+			currentMenu = "characterSelection";
+			initCharacterSelection();
+			glutDisplayFunc(displayCharacterSelection);
+			break;
+		case 3:
+			break;
+		case 4:
+			exit(0);
+			break;
+		default:
+			break;
+		}
+	}
+	else printf("%d %d no collision detected\n", x - screenWidth / 2, screenHeight / 2 - y);
+}
+
+void characterSelection_mouseHandler(int x, int y) {
+	int collisionStatus = 0;
+	collisionStatus = mouseCollisionAABB(x - screenWidth / 2, screenHeight / 2 - y);
+	if (collisionStatus > 0) {
+		printf("%d %d collision detected at button %d\n", screenWidth / 2 - x, screenHeight / 2 - y, collisionStatus);
+		switch (collisionStatus) {
+		case 1:
+			if (player.character != "biker") {
+				player.character = "biker";
+				player.setStats(bikerStats);
+				player.texture = textures[player.character + player.animation];
+			}
+			break;
+		case 2:
+			if (player.character != "punk") {
+				player.character = "punk";
+				player.setStats(punkStats);
+				player.texture = textures[player.character + player.animation];
+			}
+			break;
+		case 3:
+			if (player.character != "cyborg") {
+				player.character = "cyborg";
+				player.setStats(cyborgStats);
+				player.texture = textures[player.character + player.animation];
+			}
+			break;
+		case 4:
+			animationAttack1();
+			break;
+		case 5:
+			animationAttack2();
+			break;
+		case 6:
+			animationAttack3();
+			break;
+		case 7:
+			animationClimb();
+			break;
+		case 8:
+			animationJump();
+			break;
+		case 9:
+			animationDoublejump();
+			break;
+		case 10:
+			animationDeath();
+			break;
+		case 11:
+			animationIdle();
+			break;
+		case 12:
+			animationHurt();
+			break;
+		case 13:
+			animationPunch();
+			break;
+		case 14:
+			animationRun();
+			break;
+		case 15:
+			animationRunAttack();
+			break;
+		default:
+			break;
+		}
+	}
+	else printf("%d %d no collision detected\n", x - screenWidth / 2, screenHeight / 2 - y);
 }
 
 void keyDown(unsigned char key, int x, int y) {
@@ -317,30 +1215,29 @@ void keyUp(unsigned char key, int x, int y) {
 }
 
 void controls() {
-	movementKeys();
 	specialKeys();
+	if (controlsActive) {
+		movementKeys();
+	}
 }
 
 void movementKeys() {
 	if (keyStates['w'] || keyStates['W'])
-			if (!collisionUp(movementX, movementY, player) && !player.isInAir) {
-					player.isInAir = true;
-					/*for (float i = 0; i <= player.maxJump; i += 0.1) {
-						if (!collisionUp()) {
-							movementY += 0.1;
-							player.move(movementX, movementY);
-						}
-						else break;
-					}*/
+			if (!collisionUp(movementX, movementY, player) && !player.isJumping && !player.isFalling && !player.isAttacking && !player.isHurt) {
+					player.isJumping = true;
+					startingY = movementY;
+					if (player.animation != "_jump")animationJump();
 			}
 	//printf("X: %f\n Y: %f\n", movementX, movementY);
 		
 	if (keyStates['s'] || keyStates['S'])
-		if (!collisionDown(movementX, movementY, player)) {
+		if (!collisionDown(movementX, movementY, player) && !player.isAttacking && !player.isHurt) {
 			for (float i = 0; i <= player.maxSpeed; i += 0.1) {
 				if (!collisionDown(movementX, movementY, player)) {
 					movementY -= 0.1;
 					player.move(movementX, movementY);
+					player.isJumping = false;
+					gravityActive = true;
 				}
 				else break;
 			}
@@ -349,12 +1246,16 @@ void movementKeys() {
 
 	if (keyStates['a'] || keyStates['A'])
 		if (-screenWidth / 2 + player.size/2 < movementX) 
-			if (!collisionLeft(movementX, movementY, player)) {
+			if (!collisionLeft(movementX, movementY, player) && !player.isAttacking && !player.isHurt) {
 				for (float i = 0; i <= player.maxSpeed; i += 0.1) {
 					if (!collisionLeft(movementX, movementY, player)) {
 						movementX -= 0.1;
 						player.move(movementX, movementY);
 						player.direction = 'l';
+						if (!player.isJumping && !player.isFalling) {
+							player.isMoving = true;
+							if (player.animation != "_run") animationRun();
+						}
 					}
 					else break;
 				}
@@ -363,12 +1264,16 @@ void movementKeys() {
 
 	if(keyStates['d'] || keyStates['D'])
 		if (screenWidth / 2 - player.size/2 > movementX) 
-			if (!collisionRight(movementX, movementY, player)) {
+			if (!collisionRight(movementX, movementY, player) && !player.isAttacking && !player.isHurt) {
 				for (float i = 0; i <= player.maxSpeed; i += 0.1) {
 					if (!collisionRight(movementX, movementY, player)) {
 						movementX += 0.1;
 						player.move(movementX, movementY);
 						player.direction = 'r';
+						if (!player.isJumping && !player.isFalling) {
+							player.isMoving = true;
+							if (player.animation != "_run") animationRun();
+						}
 					}
 					else break;
 				}
@@ -378,36 +1283,32 @@ void movementKeys() {
 }
 
 void specialKeys() {
-	if (keyStates['q'] || keyStates['Q'])
-	{
-		spin += 3;
-		if (spin < -360.0)
-			spin = spin + 360.0;
-	}
-	if (keyStates['e'] || keyStates['E'])
-	{
-		spin -= 3;
-		if (spin > 360.0)
-			spin = spin - 360.0;
+	if (currentMenu == "game") {
+		if ((keyStates['j'] || keyStates['J']) && !player.isAttacking && !player.isHurt)
+		{
+			if (player.animation != "_attack1") animationAttack1();
+			player.isAttacking = true;
+		}
+		if ((keyStates['k'] || keyStates['K']) && !player.isAttacking && !player.isHurt)
+		{
+			if (player.animation != "_attack2") animationAttack2();
+			player.isAttacking = true;
+		}
+		if ((keyStates['l'] || keyStates['L']) && !player.isAttacking && !player.isHurt)
+		{
+			if (player.animation != "_attack3")animationAttack3();
+			player.isAttacking = true;
+		}
 	}
 
-	if (keyStates['1'])
-	{
-		red += 1.0 / 255 * 2;
-		if (red > 1.0) red = 0.0;
-	}
-	if (keyStates['2'])
-	{
-		green += 1.0 / 255 * 2;
-		if (green > 1.0) green = 0.0;
-	}
-	if (keyStates['3'])
-	{
-		blue += 1.0 / 255 * 2;
-		if (blue > 1.0) blue = 0.0;
-	}
 	if (keyStates[27]) {
-		exit(0);
+		if (currentMenu == "menu") exit(0);
+		else {
+			currentMenu = "menu";
+			initMenu();
+			glutDisplayFunc(displayMenu);
+			keyStates[27] = false;
+		}
 	}
 }
 
@@ -439,6 +1340,7 @@ void initRendering(const char path[]) {
 
 void timer(int cadrucurent) {
 	lazyJmp();
+	checkGround();
 	gravity();
 	controls();
 	glutTimerFunc(1000 / 120, timer, cadrucurent);
@@ -520,62 +1422,127 @@ void loadTextures() {
 }
 
 void animationAttack1() {
-	player.texture = textures[player.character + "_attack1"];
+	player.animation = "_attack1";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
 }
 void animationAttack2() {
-	player.texture = textures[player.character + "_attack2"];
+	player.animation = "_attack2";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 8;
 	//currentSprite = 0;
 }
 void animationAttack3() {
-	player.texture = textures[player.character + "_attack3"];
+	player.animation = "_attack3";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 8;
 	//currentSprite = 0;
 }
 void animationClimb() {
-	player.texture = textures[player.character + "_climb"];
+	player.animation = "_climb";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
 }
 void animationDeath() {
-	player.texture = textures[player.character + "_death"];
+	player.animation = "_death";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
 }
 void animationDoublejump() {
-	player.texture = textures[player.character + "_doublejump"];
+	player.animation = "_doublejump";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
 }
 void animationHurt() {
-	player.texture = textures[player.character + "_hurt"];
+	player.animation = "_hurt";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 2;
 	//currentSprite = 0;
 }
 void animationIdle() {
-	player.texture = textures[player.character + "_idle"];
+	player.animation = "_idle";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 4;
 	//currentSprite = 0;
 }
 void animationJump() {
-	player.texture = textures[player.character + "_jump"];
+	player.animation = "_jump";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
+	sprites = 4;
+	//currentSprite = 0;
+}
+void animationFalling() {
+	player.animation = "_jump";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 4;
 	//currentSprite = 0;
 }
 void animationPunch() {
-	player.texture = textures[player.character + "_punch"];
+	player.animation = "_punch";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
 }
 void animationRun() {
-	player.texture = textures[player.character + "_run"];
+	player.animation = "_run";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
 }
 void animationRunAttack() {
-	player.texture = textures[player.character + "_run_attack"];
+	player.animation = "_run_attack";
+	player.texture = textures[player.character + player.animation];
+	currentSprite = 0;
 	sprites = 6;
 	//currentSprite = 0;
+}
+
+int animationRepeat() {
+	if (animationCounter >= ANIMATION_DELAY) {
+		animationCounter = 0;
+		currentSprite >= sprites ? (currentSprite = 1) : currentSprite++;
+		return 0;
+	}
+	return 1;
+}
+
+int animationDoOnce() {
+	if (animationCounter >= ANIMATION_DELAY) {
+		animationCounter = 0;
+		if (currentSprite >= sprites - 1) return 0;
+		else currentSprite++;
+	}
+	return 1;
+}
+
+void checkGround() {
+	if (collisionDown(movementX, movementY, player)) {
+		player.isFalling = false;
+		if (player.isFallingCounter >= 100) {
+			printf("%d\n", player.isFallingCounter);
+			if (player.health > 0) {
+				player.health -= player.isFallingCounter / 10;
+				player.isHurt = true;
+			}
+			if (player.health < 0) player.health = 0;
+		}
+		player.isFallingCounter = 0;
+		player.isJumping = false;
+	}
 }

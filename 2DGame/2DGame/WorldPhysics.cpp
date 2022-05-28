@@ -1,11 +1,22 @@
 #include "WorldPhysics.h"
 
+//ENTITIES
 extern void initEntities() {
+	entitiesIdx = 0;
 	for (float* entity : entities) {
 		entity[0] = UINT16_MAX;
 		entity[1] = UINT16_MAX;
 		entity[2] = UINT16_MAX;
 		entity[3] = UINT16_MAX;
+	}
+}
+
+extern void printEntities() {
+	for (int i = 0; i < 100; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%lf\n", entities[i][j]);
+		}
+		printf("\n");
 	}
 }
 
@@ -15,6 +26,34 @@ extern void addEntities(float XY[]) {
 	entities[entitiesIdx][2] = XY[2];
 	entities[entitiesIdx][3] = XY[3];
 	entitiesIdx++;
+}
+
+// BUTTONS
+extern void initButtons() {
+	buttonsIdx = 0;
+	for (float* button : menuButtons) {
+		button[0] = UINT16_MAX;
+		button[1] = UINT16_MAX;
+		button[2] = UINT16_MAX;
+		button[3] = UINT16_MAX;
+	}
+}
+
+extern void printButtons() {
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%lf\n", menuButtons[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+extern void addButtons(float XY[]) {
+	menuButtons[buttonsIdx][0] = XY[0];
+	menuButtons[buttonsIdx][1] = XY[1];
+	menuButtons[buttonsIdx][2] = XY[2];
+	menuButtons[buttonsIdx][3] = XY[3];
+	buttonsIdx++;
 }
 
 extern bool collisionAABB(float posX, float posY, Character player) {
@@ -40,6 +79,35 @@ extern bool collisionAABB(float posX, float posY, Character player) {
 		}
 	}
 	return false;
+}
+
+extern int mouseCollisionAABB(float posX, float posY) {
+	float playerCX = posX;
+	float playerCY = posY;
+	float cursorDimension = 5;
+	//printf("player: %f %f\n", playerCX, playerCY);
+
+	int index = 0;
+
+	for (float* button : menuButtons) {
+		index++;
+		float buttonX = fabs(*button - *(button + 2));
+		float buttonY = fabs(*(button + 1) - *(button + 3));
+		float buttonCX = *button + (*(button + 2) - *button) / 2;
+		float buttonCY = *(button + 1) + (*(button + 3) - *(button + 1)) / 2;
+
+		//printf("entity(cx, cy, x, y): %f %f %f %f\n", entityCX, entityCY, entityX, entityY);
+
+		if (playerCX + cursorDimension > buttonCX - buttonX / 2
+			&& playerCX - cursorDimension < buttonCX + buttonX / 2
+			&& playerCY + cursorDimension > buttonCY - buttonY / 2
+			&& playerCY - cursorDimension < buttonCY + buttonY / 2)
+		{
+			//std::cout << "Collision detected\n";
+			return index;
+		}
+	}
+	return 0;
 }
 
 extern bool collisionUp(float movementX, float movementY, Character entity) {

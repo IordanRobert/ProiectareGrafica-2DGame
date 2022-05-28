@@ -5,14 +5,24 @@
 #include <cmath>
 #include "Character.h"
 
-static float entities[100][4];
+static float entities[30][4];
 static int entitiesIdx = 0;
+static float menuButtons[30][4];
+static int buttonsIdx = 0;
+
 extern void initEntities();
-extern void addEntities(float XY[4]);
+extern void printEntities();
+extern void addEntities(float[]);
 extern void removeEntities();
 
-extern bool collisionAABB(float posX, float posY, Character entity);
-extern bool collisionUp(float x, float y, Character entity);
-extern bool collisionDown(float x, float y, Character entity);
-extern bool collisionLeft(float x, float y, Character entity);
-extern bool collisionRight(float x, float y, Character entity);
+extern void initButtons();
+extern void printButtons();
+extern void addButtons(float[]);
+extern void removeButtons();
+
+extern bool collisionAABB(float, float, Character);
+extern int mouseCollisionAABB(float, float);
+extern bool collisionUp(float, float, Character);
+extern bool collisionDown(float, float, Character);
+extern bool collisionLeft(float, float, Character);
+extern bool collisionRight(float, float, Character);
