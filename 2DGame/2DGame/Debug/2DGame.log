@@ -14,48 +14,36 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\Characte
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\Character.h(82,83): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\Character.h(84,83): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\Character.h(86,87): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(76,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(76,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(78,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(78,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(79,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(79,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(81,91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(81,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(82,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(82,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(83,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(80,53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(80,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(82,74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(82,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(83,81): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(83,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(85,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(85,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(86,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(86,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(99,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(99,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(101,135): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(101,98): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(101,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(101,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(103,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(103,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(104,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(104,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(106,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(106,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(106,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(106,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(109,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(109,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(109,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(109,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(85,91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(85,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(86,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(86,52): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(87,80): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(87,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(89,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(89,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(90,78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(90,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(103,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(103,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(105,135): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(105,98): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(105,73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(105,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(107,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(108,49): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(110,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(110,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(110,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(110,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(111,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(111,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(111,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -68,10 +56,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(113,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(113,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(113,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(114,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(114,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(114,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(114,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(115,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(115,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(115,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(115,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(116,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(116,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(116,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -84,10 +72,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(118,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(118,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(118,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(119,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(119,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(119,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(119,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(120,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(120,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(120,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(120,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(121,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(121,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(121,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -100,10 +88,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(123,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(123,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(123,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(124,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(124,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(124,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(124,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(125,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(125,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(125,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(125,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(126,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(126,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(126,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -116,10 +104,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(128,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(128,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(128,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(129,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(129,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(129,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(129,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(130,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(130,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(130,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(130,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(131,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(131,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(131,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -132,10 +120,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(133,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(133,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(133,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(134,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(134,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(134,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(134,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(135,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(135,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(135,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(135,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(136,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(136,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(136,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -148,10 +136,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(138,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(138,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(138,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(139,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(139,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(139,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(139,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(140,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(140,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(140,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(140,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(141,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(141,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(141,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -164,10 +152,10 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(143,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(143,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(143,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(144,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(144,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(144,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(144,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(145,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(145,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(145,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(145,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(146,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(146,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(146,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -180,42 +168,42 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(148,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(148,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(148,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(149,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(149,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(149,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(149,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(150,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(150,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(150,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(150,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(151,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(152,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,93): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,66): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(153,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(154,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(154,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(154,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(154,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(156,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(155,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(155,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(155,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(155,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(156,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(156,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(156,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(156,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(157,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(157,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(157,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(157,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(157,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(158,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(158,127): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(158,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(158,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(158,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(159,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(159,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(159,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(159,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(160,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(160,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(160,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(160,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(161,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(161,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(161,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
@@ -228,307 +216,319 @@ E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(163,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(163,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(163,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(164,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(164,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(164,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(164,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(300,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(310,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(311,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(314,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(315,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(324,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(325,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(326,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(165,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(165,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(165,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(165,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(166,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(166,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(166,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(166,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(167,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(167,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(167,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(167,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(168,128): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(168,94): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(168,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(168,33): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(304,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(316,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(317,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(320,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(321,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(330,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(331,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(332,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(333,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(334,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(338,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(339,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(340,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(341,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(342,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(346,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(347,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(348,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(349,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(350,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(380,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(381,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(382,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(383,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(386,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(387,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(388,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(389,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(392,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(393,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(394,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(395,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(398,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(399,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(400,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(401,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(404,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(405,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(406,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(407,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(410,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(411,47): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(412,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(413,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(417,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(418,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(419,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(420,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(429,39): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(430,39): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(431,39): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(439,73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(445,36): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(446,36): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(447,36): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(455,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(456,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(457,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(458,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(467,31): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(468,31): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(469,31): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(614,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(617,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(620,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(621,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(630,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(631,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(632,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(638,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(639,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(640,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(646,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(647,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(648,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(657,56): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(658,56): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(659,56): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(354,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(355,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(356,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(388,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(389,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(390,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(391,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(394,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(395,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(396,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(397,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(400,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(401,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(402,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(403,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(406,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(407,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(408,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(409,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(412,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(413,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(414,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(415,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(418,42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(419,47): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(420,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(421,41): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(425,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(426,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(427,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(428,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(437,39): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(438,39): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(439,39): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(447,73): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(453,36): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(454,36): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(455,36): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(463,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(464,40): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(465,39): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(466,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(475,31): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(476,31): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(477,31): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(622,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(625,30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(628,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(629,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(638,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(639,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(640,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(646,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(647,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(648,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(654,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(655,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(656,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(665,56): warning C4305: '=': truncation from 'double' to 'float'
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(666,56): warning C4305: '=': truncation from 'double' to 'float'
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(667,56): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(673,59): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(674,59): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(675,59): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(681,55): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(682,55): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(683,55): warning C4305: '=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(724,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(725,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(726,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(673,56): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(674,56): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(675,56): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(681,59): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(682,59): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(683,59): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(689,55): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(690,55): warning C4305: '=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(691,55): warning C4305: '=': truncation from 'double' to 'float'
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(732,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(733,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(734,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(740,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(741,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(742,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(751,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(752,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(753,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(759,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(760,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(761,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(767,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(768,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(769,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(777,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(778,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(779,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(785,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(786,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(787,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(748,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(749,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(750,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(759,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(760,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(761,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(767,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(768,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(769,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(775,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(776,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(777,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(785,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(786,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(787,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(793,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(794,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(795,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(803,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(804,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(805,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(811,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(812,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(813,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(819,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(820,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(821,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(848,48): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(850,21): warning C4305: '-=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(861,69): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(864,21): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(892,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(893,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(894,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(895,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(915,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(916,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(920,43): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(920,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(921,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(925,43): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(925,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(926,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(930,43): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(930,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(931,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(973,152): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(973,116): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(974,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(983,67): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(983,39): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(801,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(802,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(803,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(811,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(812,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(813,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(819,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(820,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(821,53): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(827,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(828,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(829,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(856,48): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(858,21): warning C4305: '-=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(869,69): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(872,21): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(900,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(901,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(902,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(903,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(923,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(924,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(928,43): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(928,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(929,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(933,43): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(933,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(934,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(938,43): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(938,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(939,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(983,152): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(983,116): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(984,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(990,69): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(990,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(991,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(999,21): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1150,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1155,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1156,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1157,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1158,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1222,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1223,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1224,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1227,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1228,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1229,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1233,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1234,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1235,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1238,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1239,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1240,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1244,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1245,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1246,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1249,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1250,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1251,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1257,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1258,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1259,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1262,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1263,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1264,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1268,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(993,67): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(993,39): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(994,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1000,69): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1000,41): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1001,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1009,21): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1160,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1165,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1166,42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1167,41): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1168,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1232,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1233,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1234,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1237,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1238,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1239,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1243,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1244,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1245,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1248,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1249,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1250,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1254,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1255,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1256,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1259,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1260,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1261,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1267,59): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1268,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1269,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1270,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1272,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1273,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1274,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1275,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1279,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1278,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1279,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1280,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1281,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1283,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1284,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1285,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1286,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1289,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1290,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1291,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1292,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1295,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1296,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1297,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1301,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1302,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1303,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1306,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1307,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1308,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1312,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1313,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1314,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1317,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1318,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1319,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1323,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1324,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1325,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1328,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1329,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1330,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1334,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1291,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1294,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1295,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1296,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1300,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1301,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1302,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1305,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1306,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1307,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1311,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1312,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1313,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1316,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1317,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1318,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1322,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1323,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1324,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1327,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1328,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1329,54): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1333,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1334,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1335,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1336,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1338,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1339,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1340,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1341,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1345,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1346,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1347,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1350,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1351,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1352,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1356,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1357,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1358,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1361,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1362,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1363,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1367,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1344,57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1345,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1346,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1349,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1350,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1351,55): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1355,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1356,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1357,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1360,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1361,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1362,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1366,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1367,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1368,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1369,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1371,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1372,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1373,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1374,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1378,62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1379,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1380,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1383,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1384,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1385,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1434,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1434,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1435,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1439,69): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1439,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1440,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1444,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1377,58): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1378,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1379,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1382,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1383,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1384,56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1388,62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1389,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1390,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1393,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1394,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1395,60): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1444,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1444,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1445,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1451,73): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1451,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1452,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1456,73): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1456,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1457,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1449,69): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1449,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1450,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1454,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1454,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1455,20): warning C4018: '<': signed/unsigned mismatch
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1461,73): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1461,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1462,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1468,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1468,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1469,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1473,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1473,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1474,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1478,76): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1466,73): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1466,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1467,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1471,73): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1471,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1472,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1478,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1478,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1479,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1485,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1485,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1486,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1490,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1490,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1491,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1495,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1483,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1483,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1484,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1488,76): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1488,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1489,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1495,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1495,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1496,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1502,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1502,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1503,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1507,69): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1507,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1508,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1512,75): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1500,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1500,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1501,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1505,70): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1505,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1506,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1512,71): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1512,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
 E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1513,20): warning C4018: '<': signed/unsigned mismatch
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1554,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1554,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1582,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1582,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1676,52): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1678,22): warning C4305: '-=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1691,53): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1693,23): warning C4305: '-=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1709,53): warning C4305: '+=': truncation from 'double' to 'float'
-E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1711,23): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1517,69): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1517,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1518,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1522,75): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1522,16): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1523,20): warning C4018: '<': signed/unsigned mismatch
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1564,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1564,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1592,77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1592,41): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1686,52): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1688,22): warning C4305: '-=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1701,53): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1703,23): warning C4305: '-=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1719,53): warning C4305: '+=': truncation from 'double' to 'float'
+E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\2DGame\main.cpp(1721,23): warning C4305: '+=': truncation from 'double' to 'float'
   2DGame.vcxproj -> E:\Facultate\Anul3\Semestrul2\PG\ProiectareGrafica-2DGame\2DGame\Debug\2DGame.exe

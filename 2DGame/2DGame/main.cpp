@@ -72,6 +72,10 @@ Object HUDScore_score;
 int score = 0;
 //HUD END
 
+//Title
+Object title(-125, 50, 125, 50 + 250);
+//
+
 //PLATFORMS START
 Platform ground(-screenWidth / 2, -screenHeight / 2 + 32, screenWidth / 32);
 
@@ -299,6 +303,8 @@ void initWindow(void) {
 void initMenu(void) {
 	glClearColor(0.2, 0.2, 0.2, 1.0);
 
+	loadTextures();
+
 	initButtons();
 	initEntities();
 
@@ -353,6 +359,8 @@ void initMenu(void) {
 	addButtons(menuOption2Box.coords);
 	addButtons(menuOption3Box.coords);
 	addButtons(menuOption4Box.coords);
+
+	title.texture = textures["title"];
 
 	//printButtons();
 }
@@ -931,6 +939,8 @@ void displayMenu(void) {
 	for (int i = 0; i < menuOption4.length(); i++) {
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, menuOption4[i]);
 	}
+
+	title.renderTex();
 
 	glutPostRedisplay();
 	glPopMatrix();
@@ -1871,6 +1881,8 @@ void loadTextures() {
 	createTexture("./Resources/Components/Objects/Other/Tree1.png", "tree1", i++);
 	createTexture("./Resources/Components/Objects/Other/Tree2.png", "tree2", i++);
 	createTexture("./Resources/Components/Objects/Other/Tree4.png", "tree_with_swing", i++);
+
+	createTexture("./Resources/MoneyCatcher_title.png", "title", i++);
 }
 
 void animationAttack1() {
