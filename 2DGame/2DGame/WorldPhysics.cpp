@@ -1,5 +1,33 @@
 #include "WorldPhysics.h"
 
+//COLLECTIBLES
+extern void initCollectibles() {
+	collectiblesIdx = 0;
+	for (float* collectible : collectibles) {
+		collectible[0] = UINT16_MAX;
+		collectible[1] = UINT16_MAX;
+		collectible[2] = UINT16_MAX;
+		collectible[3] = UINT16_MAX;
+	}
+}
+
+extern void printCollectibles() {
+	for (int i = 0; i < 100; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%lf\n", collectibles[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+extern void addCollectibles(float XY[]) {
+	collectibles[collectiblesIdx][0] = XY[0];
+	collectibles[collectiblesIdx][1] = XY[1];
+	collectibles[collectiblesIdx][2] = XY[2];
+	collectibles[collectiblesIdx][3] = XY[3];
+	collectiblesIdx++;
+}
+
 //ENTITIES
 extern void initEntities() {
 	entitiesIdx = 0;
@@ -75,6 +103,31 @@ extern bool collisionAABB(float posX, float posY, Character player) {
 			&& playerCY - player.size / 2 < entityCY + entityY / 2)
 		{
 			//std::cout << "Collision detected\n";
+			return true;
+		}
+	}
+	return false;
+}
+
+extern bool collisionAABBCollectibles(float posX, float posY, Character player) {
+	float playerCX = posX;
+	float playerCY = posY;
+	//printf("player: %f %f\n", playerCX, playerCY);
+
+	for (float* collectible : collectibles) {
+		float collectibleX = fabs(*collectible - *(collectible + 2));
+		float collectibleY = fabs(*(collectible + 1) - *(collectible + 3));
+		float collectibleCX = *collectible + (*(collectible + 2) - *collectible) / 2;
+		float collectibleCY = *(collectible + 1) + (*(collectible + 3) - *(collectible + 1)) / 2;
+
+		//printf("collectible(cx, cy, x, y): %f %f %f %f\n", collectibleCX, collectibleCY, collectibleX, collectibleY);
+
+		if (playerCX + player.size / 2 > collectibleCX - collectibleX / 2
+			&& playerCX - player.size / 2 < collectibleCX + collectibleX / 2
+			&& playerCY + player.size / 2 > collectibleCY - collectibleY / 2
+			&& playerCY - player.size / 2 < collectibleCY + collectibleY / 2)
+		{
+			printf("Collected\n");
 			return true;
 		}
 	}

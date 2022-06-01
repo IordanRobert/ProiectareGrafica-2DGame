@@ -55,7 +55,7 @@ public:
         glVertex2f(this->coords[0] - this->size / 2, this->coords[3] + this->size / 2);
         glEnd();
     }
-    void renderTex(int currentSprite, int sprites) {
+    void renderTex() {
         float toleranceX = -0.001;
         float toleranceY = +0.01;
 

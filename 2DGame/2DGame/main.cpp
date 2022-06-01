@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <list>
+#include <time.h>
 
 #include "Object.h"
 #include "Character.h"
@@ -12,6 +13,7 @@
 #include "picopng.h"
 #include "WorldPhysics.h"
 #include "Platform.h"
+#include "Collectible.h"
 
 float movementX = 0.0;
 float movementY = 0.0;
@@ -29,6 +31,8 @@ void characterSelection_mouseHandler(int, int);
 
 Character player(48.0, 200.0, 200.0, 20.0, 150.0, 5.0, "biker"); // biker / punk / cyborg
 
+Collectible money(100, 100);
+
 /* CHARACTER STATS */
 // { TOTALHEALTH, HEALTH, DAMAGE, JUMP, SPEED }
 float bikerStats[5] = { 200.0, 200.0,  20.0, 175.0, 5.0 };
@@ -37,10 +41,9 @@ float cyborgStats[5] = { 200.0, 200.0,  35.0, 150.0, 3.5 };
 
 float startingY = 0.0;
 void checkGround();
-int sprites = 8;
-int currentSprite = 0;
-int animationCounter = 0;
-#define ANIMATION_DELAY 15
+void checkCollectible();
+//int sprites = 8;
+//int currentSprite = 0;
 void animationAttack1();
 void animationAttack2();
 void animationAttack3();
@@ -54,8 +57,6 @@ void animationFalling();
 void animationPunch();
 void animationRun();
 void animationRunAttack();
-int animationRepeat();
-int animationDoOnce();
 
 //HUD START
 Object HUDStats_box;
@@ -73,9 +74,16 @@ int score = 0;
 
 //PLATFORMS START
 Platform ground(-screenWidth / 2, -screenHeight / 2 + 32, screenWidth / 32);
-Platform platformLeft(-screenWidth / 2 + 100, -screenHeight / 2 + 32 + 150, 5);
-Platform platformRight(screenWidth / 2 - 200, -screenHeight / 2 + 32 + 150, 5);
-Platform platformCenter(-screenWidth/2 + 310, -screenHeight/2+32 + 250, 2);
+
+Platform platformLeftLeft(-screenWidth / 2 + 100, -screenHeight / 2 + 32 + 125, 3);
+Platform platformLeftRight(-screenWidth / 2 + 100 + 300, -screenHeight / 2 + 32 + 125, 3);
+
+Platform platformRightLeft(screenWidth / 2 - 200 - 128 - 128 - 64, -screenHeight / 2 + 32 + 125*3, 3);
+Platform platformRightCenter(screenWidth / 2 - 200 - 128, -screenHeight / 2 + 32 + 125*2, 3);
+Platform platformRightRight(screenWidth / 2 - 200 + 64, -screenHeight / 2 + 32 + 125*1, 5);
+
+Platform platformTopLeft(-screenWidth / 2, -screenHeight / 2 + 32 + 125 * 3, 10);
+Platform platformTopRight(screenWidth / 2 - 200 - 64, -screenHeight / 2 + 32 + 125 * 4, 10);
 //PLATFORMS END
 
 //BACKGROUND START
@@ -87,6 +95,76 @@ Object bgPart5;
 Object bgIllumination;
 //BACKGROUND END
 
+//OBJECTS ON THE MAP
+Object fountain(72+200, -screenHeight/2+32, 0+200, -screenHeight / 2 + 32 + 72);
+
+Object treeRight(screenWidth / 2 - 175 * 1 + 50, -screenHeight / 2 + 32 + 125*1, screenWidth / 2 + 50, -screenHeight / 2 + 32 + 125*1 + 190*1);
+
+Object fountainTreeLeft(110 , -screenHeight / 2 + 32, 110 + 124, -screenHeight / 2 + 32 + 129 * 1);
+Object fountainTreeRight(260, -screenHeight / 2 + 32, 260 + 62, -screenHeight / 2 + 32 + 103 * 1);
+
+Object fence10(-screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 0, -screenHeight / 2 + 32 + 64 * 1);
+Object fence11(-screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 0, -screenHeight / 2 + 32 + 64 * 2);
+Object fence12(-screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 0, -screenHeight / 2 + 32 + 64 * 3);
+Object fence13(-screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 0, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence20(-screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 1);
+Object fence21(-screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 2);
+Object fence22(-screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 3);
+Object fence23(-screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 1, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence30(-screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 1);
+Object fence31(-screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 2);
+Object fence32(-screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 3);
+Object fence33(-screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 2, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence40(-screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 1);
+Object fence41(-screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 2);
+Object fence42(-screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 3);
+Object fence43(-screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 3, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence50(-screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 1);
+Object fence51(-screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 2);
+Object fence52(-screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 3);
+Object fence53(-screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 4, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence60(-screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 1);
+Object fence61(-screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 2);
+Object fence62(-screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 3);
+Object fence63(-screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 5, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence70(-screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 1);
+Object fence71(-screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 2);
+Object fence72(-screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 3);
+Object fence73(-screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 6, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence80(-screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 1);
+Object fence81(-screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 2);
+Object fence82(-screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 3);
+Object fence83(-screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 7, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fence90(-screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 1);
+Object fence91(-screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 2);
+Object fence92(-screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 3);
+Object fence93(-screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 8, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fenceA0(-screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 1);
+Object fenceA1(-screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 2);
+Object fenceA2(-screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 3);
+Object fenceA3(-screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 9, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fenceB0(-screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 1);
+Object fenceB1(-screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 2);
+Object fenceB2(-screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 3);
+Object fenceB3(-screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 10, -screenHeight / 2 + 32 + 64 * 4);
+
+Object fenceC0(-screenWidth / 2 + 48 * 12, -screenHeight / 2 + 32 + 64 * 0, -screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 1);
+Object fenceC1(-screenWidth / 2 + 48 * 12, -screenHeight / 2 + 32 + 64 * 1, -screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 2);
+Object fenceC2(-screenWidth / 2 + 48 * 12, -screenHeight / 2 + 32 + 64 * 2, -screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 3);
+Object fenceC3(-screenWidth / 2 + 48 * 12, -screenHeight / 2 + 32 + 64 * 3, -screenWidth / 2 + 48 * 11, -screenHeight / 2 + 32 + 64 * 4);
+
+//
+
 // MENU START
 float menuLeftAxis = 0;
 float menuRightAxis = 0;
@@ -97,6 +175,8 @@ float buttonRightMargin = 0;
 
 float buttonSpacing = 0;
 float buttonPadding = 0;
+
+int buttonColors[3] = { 100, 100, 255 };
 
 Object menuOption1Box;
 Object menuOption2Box;
@@ -176,6 +256,8 @@ void initRendering(const char path[]);
 void createTexture(const char* filename, std::string textureName, uint8_t textureId);
 void loadTextures();
 
+void generate_randomCoords();
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
@@ -185,11 +267,10 @@ int main(int argc, char** argv)
 	glutInitWindowSize(screenWidth, screenHeight);
 	glutCreateWindow("Platformer");
 
+	srand((unsigned)time(NULL));
 	initWindow();
 	initMenu();
-	//initGame();
-
-	//initRendering("sponge24bit.bmp");
+	
 
 	glutDisplayFunc(displayMenu);
 	//glutDisplayFunc(displayGame);
@@ -216,7 +297,7 @@ void initWindow(void) {
 }
 
 void initMenu(void) {
-	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glClearColor(0.2, 0.2, 0.2, 1.0);
 
 	initButtons();
 	initEntities();
@@ -240,33 +321,33 @@ void initMenu(void) {
 	menuOption1Box.coords[1] = -0 * 18 * 2 * buttonSpacing - buttonPadding;
 	menuOption1Box.coords[2] = buttonRightMargin;
 	menuOption1Box.coords[3] = -0 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	menuOption1Box.color[0] = 0;
-	menuOption1Box.color[1] = 128;
-	menuOption1Box.color[2] = 128;
+	menuOption1Box.color[0] = buttonColors[0];
+	menuOption1Box.color[1] = buttonColors[1];
+	menuOption1Box.color[2] = buttonColors[2];
 
 	menuOption2Box.coords[0] = buttonLeftMargin;
 	menuOption2Box.coords[1] = -1 * 18 * 2 * buttonSpacing - buttonPadding;
 	menuOption2Box.coords[2] = buttonRightMargin;
 	menuOption2Box.coords[3] = -1 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	menuOption2Box.color[0] = 0;
-	menuOption2Box.color[1] = 128;
-	menuOption2Box.color[2] = 128;
+	menuOption2Box.color[0] = buttonColors[0];
+	menuOption2Box.color[1] = buttonColors[1];
+	menuOption2Box.color[2] = buttonColors[2];
 
 	menuOption3Box.coords[0] = buttonLeftMargin;
 	menuOption3Box.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
 	menuOption3Box.coords[2] = buttonRightMargin;
 	menuOption3Box.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	menuOption3Box.color[0] = 0;
-	menuOption3Box.color[1] = 128;
-	menuOption3Box.color[2] = 128;
+	menuOption3Box.color[0] = buttonColors[0];
+	menuOption3Box.color[1] = buttonColors[1];
+	menuOption3Box.color[2] = buttonColors[2];
 
 	menuOption4Box.coords[0] = buttonLeftMargin;
 	menuOption4Box.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
 	menuOption4Box.coords[2] = buttonRightMargin;
 	menuOption4Box.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	menuOption4Box.color[0] = 0;
-	menuOption4Box.color[1] = 128;
-	menuOption4Box.color[2] = 128;
+	menuOption4Box.color[0] = buttonColors[0];
+	menuOption4Box.color[1] = buttonColors[1];
+	menuOption4Box.color[2] = buttonColors[2];
 	
 	addButtons(menuOption1Box.coords);
 	addButtons(menuOption2Box.coords);
@@ -352,6 +433,8 @@ void initGame(void) {
 	HUDStats_character.size = 36;
 	HUDStats_character.character = player.character;
 	HUDStats_character.animation = "_idle";
+	HUDStats_character.currentSprite = 0;
+	HUDStats_character.sprites = 4;
 	HUDStats_character.texture = textures[HUDStats_character.character + HUDStats_character.animation];
 	HUDStats_character.move(-screenWidth / 2 + HUDStats_character.size/1.5 + 5, screenHeight / 2 - HUDStats_character.size / 2 + 1);
 
@@ -393,23 +476,123 @@ void initGame(void) {
 	addEntities(ground.hitboxCoords);
 
 	/* PLATFORMS */
-	platformLeft.texture[0] = textures["tileLeft"];
-	platformLeft.texture[1] = textures["tileMiddle"];
-	platformLeft.texture[2] = textures["tileRight"];
-	platformLeft.calcHitbox();
-	addEntities(platformLeft.hitboxCoords);
+	platformLeftLeft.texture[0] = textures["tileLeft"];
+	platformLeftLeft.texture[1] = textures["tileMiddle"];
+	platformLeftLeft.texture[2] = textures["tileRight"];
+	platformLeftLeft.calcHitbox();
+	addEntities(platformLeftLeft.hitboxCoords);
 
-	platformRight.texture[0] = textures["tileLeft"];
-	platformRight.texture[1] = textures["tileMiddle"];
-	platformRight.texture[2] = textures["tileRight"];
-	platformRight.calcHitbox();
-	addEntities(platformRight.hitboxCoords);
+	platformLeftRight.texture[0] = textures["tileLeft"];
+	platformLeftRight.texture[1] = textures["tileMiddle"];
+	platformLeftRight.texture[2] = textures["tileRight"];
+	platformLeftRight.calcHitbox();
+	addEntities(platformLeftRight.hitboxCoords);
 
-	platformCenter.texture[0] = textures["tileLeft"];
-	platformCenter.texture[1] = textures["tileMiddle"];
-	platformCenter.texture[2] = textures["tileRight"];
-	platformCenter.calcHitbox();
-	addEntities(platformCenter.hitboxCoords);
+	platformRightRight.texture[0] = textures["tileLeft"];
+	platformRightRight.texture[1] = textures["tileMiddle"];
+	platformRightRight.texture[2] = textures["tileRight"];
+	platformRightRight.calcHitbox();
+	addEntities(platformRightRight.hitboxCoords);
+
+	platformRightLeft.texture[0] = textures["tileLeft"];
+	platformRightLeft.texture[1] = textures["tileMiddle"];
+	platformRightLeft.texture[2] = textures["tileRight"];
+	platformRightLeft.calcHitbox();
+	addEntities(platformRightLeft.hitboxCoords);
+
+	platformRightCenter.texture[0] = textures["tileLeft"];
+	platformRightCenter.texture[1] = textures["tileMiddle"];
+	platformRightCenter.texture[2] = textures["tileRight"];
+	platformRightCenter.calcHitbox();
+	addEntities(platformRightCenter.hitboxCoords);
+
+	platformTopLeft.texture[0] = textures["tileLeft"];
+	platformTopLeft.texture[1] = textures["tileMiddle"];
+	platformTopLeft.texture[2] = textures["tileRight"];
+	platformTopLeft.calcHitbox();
+	addEntities(platformTopLeft.hitboxCoords);
+
+	platformTopRight.texture[0] = textures["tileLeft"];
+	platformTopRight.texture[1] = textures["tileMiddle"];
+	platformTopRight.texture[2] = textures["tileRight"];
+	platformTopRight.calcHitbox();
+	addEntities(platformTopRight.hitboxCoords);
+
+	//OBJECTS ON THE MAP
+	fountain.currentSprite = 0;
+	fountain.sprites = 4;
+	fountain.texture = textures["animated_fountain"];
+
+	treeRight.texture = textures["tree_with_swing"];
+
+	fountainTreeLeft.texture = textures["tree2"];
+	fountainTreeRight.texture = textures["tree1"];
+
+	fence10.texture = textures["fence"];
+	fence11.texture = textures["fence"];
+	fence12.texture = textures["fence"];
+	fence13.texture = textures["fence"];
+
+	fence20.texture = textures["fence"];
+	fence21.texture = textures["fence"];
+	fence22.texture = textures["fence"];
+	fence23.texture = textures["fence"];
+
+	fence30.texture = textures["fence"];
+	fence31.texture = textures["fence"];
+	fence32.texture = textures["fence"];
+	fence33.texture = textures["fence"];
+
+	fence40.texture = textures["fence"];
+	fence41.texture = textures["fence"];
+	fence42.texture = textures["fence"];
+	fence43.texture = textures["fence"];
+
+	fence50.texture = textures["fence"];
+	fence51.texture = textures["fence"];
+	fence52.texture = textures["fence"];
+	fence53.texture = textures["fence"];
+
+	fence60.texture = textures["fence"];
+	fence61.texture = textures["fence"];
+	fence62.texture = textures["fence"];
+	fence63.texture = textures["fence"];
+
+	fence70.texture = textures["fence"];
+	fence71.texture = textures["fence"];
+	fence72.texture = textures["fence"];
+	fence73.texture = textures["fence"];
+
+	fence80.texture = textures["fence"];
+	fence81.texture = textures["fence"];
+	fence82.texture = textures["fence"];
+	fence83.texture = textures["fence"];
+
+	fence90.texture = textures["fence"];
+	fence91.texture = textures["fence"];
+	fence92.texture = textures["fence"];
+	fence93.texture = textures["fence"];
+
+	fenceA0.texture = textures["fence"];
+	fenceA1.texture = textures["fence"];
+	fenceA2.texture = textures["fence"];
+	fenceA3.texture = textures["fence"];
+
+	fenceB0.texture = textures["fence"];
+	fenceB1.texture = textures["fence"];
+	fenceB2.texture = textures["fence"];
+	fenceB3.texture = textures["fence"];
+
+	fenceC0.texture = textures["fence"];
+	fenceC1.texture = textures["fence"];
+	fenceC2.texture = textures["fence"];
+	fenceC3.texture = textures["fence"];
+
+	//
+	money.currentSprite = 0;
+	money.sprites = 6;
+	money.texture = textures["money"];
+	addCollectibles(money.coords);
 
 	//printEntities();
 }
@@ -427,6 +610,7 @@ void initCharacterSelection() {
 	controlsActive = false;
 
 	player.size = player.size * 5;
+	player.direction = 'r';
 	glClearColor(0.2, 0.2, 0.2, 1.0);
 
 	menuLeftAxis = 0;
@@ -443,25 +627,25 @@ void initCharacterSelection() {
 	characterSelectButton_biker.coords[1] = 3 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_biker.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
 	characterSelectButton_biker.coords[3] = 3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_biker.color[0] = 0;
-	characterSelectButton_biker.color[1] = 128;
-	characterSelectButton_biker.color[2] = 128;
+	characterSelectButton_biker.color[0] = buttonColors[0];
+	characterSelectButton_biker.color[1] = buttonColors[1];
+	characterSelectButton_biker.color[2] = buttonColors[2];
 
 	characterSelectButton_punk.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
 	characterSelectButton_punk.coords[1] = 3 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_punk.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
 	characterSelectButton_punk.coords[3] = 3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_punk.color[0] = 0;
-	characterSelectButton_punk.color[1] = 128;
-	characterSelectButton_punk.color[2] = 128;
+	characterSelectButton_punk.color[0] = buttonColors[0];
+	characterSelectButton_punk.color[1] = buttonColors[1];
+	characterSelectButton_punk.color[2] = buttonColors[2];
 
 	characterSelectButton_cyborg.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
 	characterSelectButton_cyborg.coords[1] = 3 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_cyborg.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
 	characterSelectButton_cyborg.coords[3] = 3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_cyborg.color[0] = 0;
-	characterSelectButton_cyborg.color[1] = 128;
-	characterSelectButton_cyborg.color[2] = 128;
+	characterSelectButton_cyborg.color[0] = buttonColors[0];
+	characterSelectButton_cyborg.color[1] = buttonColors[1];
+	characterSelectButton_cyborg.color[2] = buttonColors[2];
 
 	/* CHARACTER STATUS */
 	// stats Background
@@ -537,25 +721,26 @@ void initCharacterSelection() {
 	characterSelectButton_attack1.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_attack1.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
 	characterSelectButton_attack1.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_attack1.color[0] = 0;
-	characterSelectButton_attack1.color[1] = 128;
-	characterSelectButton_attack1.color[2] = 128;
+	characterSelectButton_attack1.color[0] = buttonColors[0];
+	characterSelectButton_attack1.color[1] = buttonColors[1];
+	characterSelectButton_attack1.color[2] = buttonColors[2];
 
 	characterSelectButton_attack2.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
 	characterSelectButton_attack2.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_attack2.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
 	characterSelectButton_attack2.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_attack2.color[0] = 0;
-	characterSelectButton_attack2.color[1] = 128;
-	characterSelectButton_attack2.color[2] = 128;
+	characterSelectButton_attack2.color[0] = buttonColors[0];
+	characterSelectButton_attack2.color[1] = buttonColors[1];
+	characterSelectButton_attack2.color[2] = buttonColors[2];
 
 	characterSelectButton_attack3.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
 	characterSelectButton_attack3.coords[1] = -2 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_attack3.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
 	characterSelectButton_attack3.coords[3] = -2 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_attack3.color[0] = 0;
-	characterSelectButton_attack3.color[1] = 128;
-	characterSelectButton_attack3.color[2] = 128;
+	characterSelectButton_attack3.color[0] = buttonColors[0];
+	characterSelectButton_attack3.color[1] = buttonColors[1];
+	characterSelectButton_attack3.color[2] = buttonColors[2];
+
 
 	//
 
@@ -563,25 +748,25 @@ void initCharacterSelection() {
 	characterSelectButton_climb.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_climb.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
 	characterSelectButton_climb.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_climb.color[0] = 0;
-	characterSelectButton_climb.color[1] = 128;
-	characterSelectButton_climb.color[2] = 128;
+	characterSelectButton_climb.color[0] = buttonColors[0];
+	characterSelectButton_climb.color[1] = buttonColors[1];
+	characterSelectButton_climb.color[2] = buttonColors[2];
 
 	characterSelectButton_jump.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
 	characterSelectButton_jump.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_jump.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
 	characterSelectButton_jump.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_jump.color[0] = 0;
-	characterSelectButton_jump.color[1] = 128;
-	characterSelectButton_jump.color[2] = 128;
+	characterSelectButton_jump.color[0] = buttonColors[0];
+	characterSelectButton_jump.color[1] = buttonColors[1];
+	characterSelectButton_jump.color[2] = buttonColors[2];
 
 	characterSelectButton_doubleJump.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
 	characterSelectButton_doubleJump.coords[1] = -3 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_doubleJump.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
 	characterSelectButton_doubleJump.coords[3] = -3 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_doubleJump.color[0] = 0;
-	characterSelectButton_doubleJump.color[1] = 128;
-	characterSelectButton_doubleJump.color[2] = 128;
+	characterSelectButton_doubleJump.color[0] = buttonColors[0];
+	characterSelectButton_doubleJump.color[1] = buttonColors[1];
+	characterSelectButton_doubleJump.color[2] = buttonColors[2];
 
 	//
 
@@ -589,25 +774,25 @@ void initCharacterSelection() {
 	characterSelectButton_death.coords[1] = -4 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_death.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
 	characterSelectButton_death.coords[3] = -4 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_death.color[0] = 0;
-	characterSelectButton_death.color[1] = 128;
-	characterSelectButton_death.color[2] = 128;
+	characterSelectButton_death.color[0] = buttonColors[0];
+	characterSelectButton_death.color[1] = buttonColors[1];
+	characterSelectButton_death.color[2] = buttonColors[2];
 
 	characterSelectButton_idle.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
 	characterSelectButton_idle.coords[1] = -4 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_idle.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
 	characterSelectButton_idle.coords[3] = -4 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_idle.color[0] = 0;
-	characterSelectButton_idle.color[1] = 128;
-	characterSelectButton_idle.color[2] = 128;
+	characterSelectButton_idle.color[0] = buttonColors[0];
+	characterSelectButton_idle.color[1] = buttonColors[1];
+	characterSelectButton_idle.color[2] = buttonColors[2];
 
 	characterSelectButton_hurt.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
 	characterSelectButton_hurt.coords[1] = -4 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_hurt.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
 	characterSelectButton_hurt.coords[3] = -4 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_hurt.color[0] = 0;
-	characterSelectButton_hurt.color[1] = 128;
-	characterSelectButton_hurt.color[2] = 128;
+	characterSelectButton_hurt.color[0] = buttonColors[0];
+	characterSelectButton_hurt.color[1] = buttonColors[1];
+	characterSelectButton_hurt.color[2] = buttonColors[2];
 
 	//
 
@@ -615,25 +800,25 @@ void initCharacterSelection() {
 	characterSelectButton_punch.coords[1] = -5 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_punch.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 - 10;
 	characterSelectButton_punch.coords[3] = -5 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_punch.color[0] = 0;
-	characterSelectButton_punch.color[1] = 128;
-	characterSelectButton_punch.color[2] = 128;
+	characterSelectButton_punch.color[0] = buttonColors[0];
+	characterSelectButton_punch.color[1] = buttonColors[1];
+	characterSelectButton_punch.color[2] = buttonColors[2];
 
 	characterSelectButton_run.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 + 5;
 	characterSelectButton_run.coords[1] = -5 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_run.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 - 5;
 	characterSelectButton_run.coords[3] = -5 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_run.color[0] = 0;
-	characterSelectButton_run.color[1] = 128;
-	characterSelectButton_run.color[2] = 128;
+	characterSelectButton_run.color[0] = buttonColors[0];
+	characterSelectButton_run.color[1] = buttonColors[1];
+	characterSelectButton_run.color[2] = buttonColors[2];
 
 	characterSelectButton_runAttack.coords[0] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 2 + 10;
 	characterSelectButton_runAttack.coords[1] = -5 * 18 * 2 * buttonSpacing - buttonPadding;
 	characterSelectButton_runAttack.coords[2] = buttonLeftMargin + (buttonRightMargin - buttonLeftMargin) / 3 * 3;
 	characterSelectButton_runAttack.coords[3] = -5 * 18 * 2 * buttonSpacing + 14 + buttonPadding;
-	characterSelectButton_runAttack.color[0] = 0;
-	characterSelectButton_runAttack.color[1] = 128;
-	characterSelectButton_runAttack.color[2] = 128;
+	characterSelectButton_runAttack.color[0] = buttonColors[0];
+	characterSelectButton_runAttack.color[1] = buttonColors[1];
+	characterSelectButton_runAttack.color[2] = buttonColors[2];
 
 	addButtons(characterSelectButton_biker.coords);
 	addButtons(characterSelectButton_punk.coords);
@@ -680,7 +865,7 @@ void lazyJmp() {
 				player.move(movementX, movementY);
 				//printf("Starting Jump at: %0.1f (jumping: %d / falling: %d / gravity: %d)\n", startingY, player.isJumping, player.isFalling, gravityActive);
 				if (movementY >= startingY + player.maxJump) {
-					currentSprite = 2;
+					player.currentSprite = 2;
 					if (player.animation != "_jump") animationFalling();
 					gravityActive = true;
 					player.isJumping = false;
@@ -688,7 +873,7 @@ void lazyJmp() {
 				}
 			}
 			else {
-				currentSprite = 2;
+				player.currentSprite = 2;
 				if (player.animation != "_jump") animationFalling();
 				gravityActive = true;
 				player.isJumping = false;
@@ -759,16 +944,19 @@ void displayGame(void)
 	glClear(GL_COLOR_BUFFER_BIT);
 	glPushMatrix();
 
+	bgIllumination.renderTex();
 	bgPart1.renderTex();
 	bgPart2.renderTex();
 	bgPart3.renderTex();
 	bgPart4.renderTex();
 	bgPart5.renderTex();
-	//bgIllumination.renderTex();
 
 	HUDStats_box.render3ub();
 	HUDStats_character_box.render3f();
-	HUDStats_character.renderTex(0, 4);
+	HUDStats_character.renderTex();
+
+	if (HUDStats_character.animationRepeat()) HUDStats_character.animationCounter++;
+
 	HUDStats_health_box.render3f();
 
 	HUDStats_health_percent.coords[2] = HUDStats_health_box.coords[0] - 5 + (HUDStats_health_box.coords[2] - 5 - (HUDStats_health_box.coords[0] - 5)) / player.totalHealth * player.health;
@@ -804,19 +992,21 @@ void displayGame(void)
 		glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, HUDScore_score_string[i]);
 	}
 
-	score++;
-
-	player.renderTex(currentSprite, sprites);
-
 	if (player.health == 0) {
+		std::string gameOver_string = "GAME OVER";
+		glColor3ub(43, 43, 43);
+		glRasterPos2i(-50, 0);
+		for (int i = 0; i < gameOver_string.length(); i++) {
+			glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, gameOver_string[i]);
+		}
 		controlsActive = false;
 		if (player.animation != "_death") animationDeath();
-		if (animationDoOnce()) animationCounter++;
+		if (player.animationDoOnce()) player.animationCounter++;
 	}
 	else {
 		if (!player.isMoving && !player.isAttacking && !player.isJumping && !player.isFalling && !player.isHurt) {
 			if (player.animation != "_idle") animationIdle();
-			if (animationRepeat()) animationCounter++;
+			if (player.animationRepeat()) player.animationCounter++;
 			player.isMoving = false;
 			player.isJumping = false;
 			player.isFalling = false;
@@ -824,20 +1014,20 @@ void displayGame(void)
 		}
 
 		if (player.isAttacking) {
-			if (animationDoOnce()) {
-				printf("\ncur:%d total:%d attacking:%d", currentSprite, sprites, player.isAttacking);
+			if (player.animationDoOnce()) {
+				//printf("\ncur:%d total:%d attacking:%d", player.currentSprite, player.sprites, player.isAttacking);
 				controlsActive = false;
-				animationCounter++;
+				player.animationCounter++;
 			}
 			else {
-				currentSprite = 0;
+				player.currentSprite = 0;
 				player.isAttacking = false;
 				controlsActive = true;
 			}
 		}
 
 		if (player.isMoving) {
-			if (animationRepeat()) animationCounter++;
+			if (player.animationRepeat()) player.animationCounter++;
 			else player.isMoving = false;
 		}
 
@@ -849,15 +1039,96 @@ void displayGame(void)
 
 		if (player.isHurt) {
 			if (player.animation != "_hurt") animationHurt();
-			if (animationDoOnce()) animationCounter++;
+			if (player.animationDoOnce()) player.animationCounter++;
 			else player.isHurt = false;
 		}
 	}
 
 	ground.renderTex();
-	platformLeft.renderTex();
-	platformRight.renderTex();
-	platformCenter.renderTex();
+	platformLeftLeft.renderTex();
+	platformLeftRight.renderTex();
+
+	platformRightRight.renderTex();
+	platformRightLeft.renderTex();
+	platformRightCenter.renderTex();
+	
+	platformTopLeft.renderTex();
+	platformTopRight.renderTex();
+
+	treeRight.renderTex();
+
+	fountainTreeLeft.renderTex();
+	fountainTreeRight.renderTex();
+
+	fountain.renderTex();
+	if (fountain.animationRepeat()) fountain.animationCounter++;
+
+
+	player.renderTex();
+
+	money.renderTex();
+	if (money.animationRepeat()) money.animationCounter++;
+
+	fence10.renderTex();
+	fence11.renderTex();
+	fence12.renderTex();
+	fence13.renderTex();
+
+	fence20.renderTex();
+	fence21.renderTex();
+	fence22.renderTex();
+	fence23.renderTex();
+
+	fence30.renderTex();
+	fence31.renderTex();
+	fence32.renderTex();
+	fence33.renderTex();
+
+	fence40.renderTex();
+	fence41.renderTex();
+	fence42.renderTex();
+	fence43.renderTex();
+
+	fence50.renderTex();
+	fence51.renderTex();
+	fence52.renderTex();
+	fence53.renderTex();
+
+	fence60.renderTex();
+	fence61.renderTex();
+	fence62.renderTex();
+	fence63.renderTex();
+
+	fence70.renderTex();
+	fence71.renderTex();
+	fence72.renderTex();
+	fence73.renderTex();
+
+	fence80.renderTex();
+	fence81.renderTex();
+	fence82.renderTex();
+	fence83.renderTex();
+
+	fence90.renderTex();
+	fence91.renderTex();
+	fence92.renderTex();
+	fence93.renderTex();
+
+	fenceA0.renderTex();
+	fenceA1.renderTex();
+	fenceA2.renderTex();
+	fenceA3.renderTex();
+
+	fenceB0.renderTex();
+	fenceB1.renderTex();
+	fenceB2.renderTex();
+	fenceB3.renderTex();
+
+	fenceC0.renderTex();
+	fenceC1.renderTex();
+	fenceC2.renderTex();
+	fenceC3.renderTex();
+
 
 	glutPostRedisplay();
 	glPopMatrix();
@@ -871,10 +1142,10 @@ void displayCharacterSelection(void) {
 	glPushMatrix();
 
 	/* PLAYER ZONE */
-	player.renderTex(currentSprite, sprites);
+	player.renderTex();
 	//animationIdle();
 	//animationDeath();
-	if (animationRepeat()) ++animationCounter;
+	if (player.animationRepeat()) ++player.animationCounter;
 
 	player.move(-screenWidth / 4, 0);
 
@@ -945,6 +1216,176 @@ void displayCharacterSelection(void) {
 	characterSelectButton_punch.render3ub();
 	characterSelectButton_run.render3ub();
 	characterSelectButton_runAttack.render3ub();
+
+	//Character active button display
+	if (player.character == "biker") {
+		characterSelectButton_biker.color[0] = buttonColors[0] + 100;
+		characterSelectButton_biker.color[1] = buttonColors[1];
+		characterSelectButton_biker.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_biker.color[0] = buttonColors[0];
+		characterSelectButton_biker.color[1] = buttonColors[1];
+		characterSelectButton_biker.color[2] = buttonColors[2];
+	}
+
+	if (player.character == "punk") {
+		characterSelectButton_punk.color[0] = buttonColors[0] + 100;
+		characterSelectButton_punk.color[1] = buttonColors[1];
+		characterSelectButton_punk.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_punk.color[0] = buttonColors[0];
+		characterSelectButton_punk.color[1] = buttonColors[1];
+		characterSelectButton_punk.color[2] = buttonColors[2];
+	}
+
+	if (player.character == "cyborg") {
+		characterSelectButton_cyborg.color[0] = buttonColors[0] + 100;
+		characterSelectButton_cyborg.color[1] = buttonColors[1];
+		characterSelectButton_cyborg.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_cyborg.color[0] = buttonColors[0];
+		characterSelectButton_cyborg.color[1] = buttonColors[1];
+		characterSelectButton_cyborg.color[2] = buttonColors[2];
+	}
+
+
+	//Animation active button display
+	if (player.animation == "_attack1") {
+		characterSelectButton_attack1.color[0] = buttonColors[0]+100;
+		characterSelectButton_attack1.color[1] = buttonColors[1];
+		characterSelectButton_attack1.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_attack1.color[0] = buttonColors[0];
+		characterSelectButton_attack1.color[1] = buttonColors[1];
+		characterSelectButton_attack1.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_attack2") {
+		characterSelectButton_attack2.color[0] = buttonColors[0] + 100;
+		characterSelectButton_attack2.color[1] = buttonColors[1];
+		characterSelectButton_attack2.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_attack2.color[0] = buttonColors[0];
+		characterSelectButton_attack2.color[1] = buttonColors[1];
+		characterSelectButton_attack2.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_attack3") {
+		characterSelectButton_attack3.color[0] = buttonColors[0] + 100;
+		characterSelectButton_attack3.color[1] = buttonColors[1];
+		characterSelectButton_attack3.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_attack3.color[0] = buttonColors[0];
+		characterSelectButton_attack3.color[1] = buttonColors[1];
+		characterSelectButton_attack3.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_death") {
+		characterSelectButton_death.color[0] = buttonColors[0] + 100;
+		characterSelectButton_death.color[1] = buttonColors[1];
+		characterSelectButton_death.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_death.color[0] = buttonColors[0];
+		characterSelectButton_death.color[1] = buttonColors[1];
+		characterSelectButton_death.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_idle") {
+		characterSelectButton_idle.color[0] = buttonColors[0] + 100;
+		characterSelectButton_idle.color[1] = buttonColors[1];
+		characterSelectButton_idle.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_idle.color[0] = buttonColors[0];
+		characterSelectButton_idle.color[1] = buttonColors[1];
+		characterSelectButton_idle.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_run") {
+		characterSelectButton_run.color[0] = buttonColors[0] + 100;
+		characterSelectButton_run.color[1] = buttonColors[1];
+		characterSelectButton_run.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_run.color[0] = buttonColors[0];
+		characterSelectButton_run.color[1] = buttonColors[1];
+		characterSelectButton_run.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_jump") {
+		characterSelectButton_jump.color[0] = buttonColors[0] + 100;
+		characterSelectButton_jump.color[1] = buttonColors[1];
+		characterSelectButton_jump.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_jump.color[0] = buttonColors[0];
+		characterSelectButton_jump.color[1] = buttonColors[1];
+		characterSelectButton_jump.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_hurt") {
+		characterSelectButton_hurt.color[0] = buttonColors[0] + 100;
+		characterSelectButton_hurt.color[1] = buttonColors[1];
+		characterSelectButton_hurt.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_hurt.color[0] = buttonColors[0];
+		characterSelectButton_hurt.color[1] = buttonColors[1];
+		characterSelectButton_hurt.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_doublejump") {
+		characterSelectButton_doubleJump.color[0] = buttonColors[0] + 100;
+		characterSelectButton_doubleJump.color[1] = buttonColors[1];
+		characterSelectButton_doubleJump.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_doubleJump.color[0] = buttonColors[0];
+		characterSelectButton_doubleJump.color[1] = buttonColors[1];
+		characterSelectButton_doubleJump.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_punch") {
+		characterSelectButton_punch.color[0] = buttonColors[0] + 100;
+		characterSelectButton_punch.color[1] = buttonColors[1];
+		characterSelectButton_punch.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_punch.color[0] = buttonColors[0];
+		characterSelectButton_punch.color[1] = buttonColors[1];
+		characterSelectButton_punch.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_climb") {
+		characterSelectButton_climb.color[0] = buttonColors[0] + 100;
+		characterSelectButton_climb.color[1] = buttonColors[1];
+		characterSelectButton_climb.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_climb.color[0] = buttonColors[0];
+		characterSelectButton_climb.color[1] = buttonColors[1];
+		characterSelectButton_climb.color[2] = buttonColors[2];
+	}
+
+	if (player.animation == "_run_attack") {
+		characterSelectButton_runAttack.color[0] = buttonColors[0] + 100;
+		characterSelectButton_runAttack.color[1] = buttonColors[1];
+		characterSelectButton_runAttack.color[2] = buttonColors[2];
+	}
+	else {
+		characterSelectButton_runAttack.color[0] = buttonColors[0];
+		characterSelectButton_runAttack.color[1] = buttonColors[1];
+		characterSelectButton_runAttack.color[2] = buttonColors[2];
+	}
+
+
 
 	// MENU BUTTONS STRINGS
 	std::string characterSelectButton_biker_string = "BIKER";
@@ -1341,6 +1782,7 @@ void initRendering(const char path[]) {
 void timer(int cadrucurent) {
 	lazyJmp();
 	checkGround();
+	checkCollectible();
 	gravity();
 	controls();
 	glutTimerFunc(1000 / 120, timer, cadrucurent);
@@ -1418,124 +1860,116 @@ void loadTextures() {
 	createTexture("./Resources/Components/Background/Night/5.png","NightPart5", i++);
 
 	//Background Illumination
-	createTexture("./Resources/Components/Background/Overlay_illumination.png", "Illumination", 18);
+	createTexture("./Resources/Components/Background/Overlay_illumination.png", "Illumination", i++);
+
+	//Money sprite
+	createTexture("./Resources/Components/Animated_objects/Money.png", "money", i++);
+
+	//Objects on the map
+	createTexture("./Resources/Components/Animated_objects/Fountain.png", "animated_fountain", i++);
+	createTexture("./Resources/Components/Objects/Fence/6.png", "fence", i++);
+	createTexture("./Resources/Components/Objects/Other/Tree1.png", "tree1", i++);
+	createTexture("./Resources/Components/Objects/Other/Tree2.png", "tree2", i++);
+	createTexture("./Resources/Components/Objects/Other/Tree4.png", "tree_with_swing", i++);
 }
 
 void animationAttack1() {
 	player.animation = "_attack1";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
 }
 void animationAttack2() {
 	player.animation = "_attack2";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 8;
+	player.currentSprite = 0;
+	player.sprites = 8;
 	//currentSprite = 0;
 }
 void animationAttack3() {
 	player.animation = "_attack3";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 8;
+	player.currentSprite = 0;
+	player.sprites = 8;
 	//currentSprite = 0;
 }
 void animationClimb() {
 	player.animation = "_climb";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
 }
 void animationDeath() {
 	player.animation = "_death";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
 }
 void animationDoublejump() {
 	player.animation = "_doublejump";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
 }
 void animationHurt() {
 	player.animation = "_hurt";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 2;
+	player.currentSprite = 0;
+	player.sprites = 2;
 	//currentSprite = 0;
 }
 void animationIdle() {
 	player.animation = "_idle";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 4;
+	player.currentSprite = 0;
+	player.sprites = 4;
 	//currentSprite = 0;
 }
 void animationJump() {
 	player.animation = "_jump";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 4;
+	player.currentSprite = 0;
+	player.sprites = 4;
 	//currentSprite = 0;
 }
 void animationFalling() {
 	player.animation = "_jump";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 4;
+	player.currentSprite = 0;
+	player.sprites = 4;
 	//currentSprite = 0;
 }
 void animationPunch() {
 	player.animation = "_punch";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
 }
 void animationRun() {
 	player.animation = "_run";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
 }
 void animationRunAttack() {
 	player.animation = "_run_attack";
 	player.texture = textures[player.character + player.animation];
-	currentSprite = 0;
-	sprites = 6;
+	player.currentSprite = 0;
+	player.sprites = 6;
 	//currentSprite = 0;
-}
-
-int animationRepeat() {
-	if (animationCounter >= ANIMATION_DELAY) {
-		animationCounter = 0;
-		currentSprite >= sprites ? (currentSprite = 1) : currentSprite++;
-		return 0;
-	}
-	return 1;
-}
-
-int animationDoOnce() {
-	if (animationCounter >= ANIMATION_DELAY) {
-		animationCounter = 0;
-		if (currentSprite >= sprites - 1) return 0;
-		else currentSprite++;
-	}
-	return 1;
 }
 
 void checkGround() {
 	if (collisionDown(movementX, movementY, player)) {
 		player.isFalling = false;
 		if (player.isFallingCounter >= 100) {
-			printf("%d\n", player.isFallingCounter);
+			printf("Falling damage: %d\n", player.isFallingCounter/10);
 			if (player.health > 0) {
 				player.health -= player.isFallingCounter / 10;
 				player.isHurt = true;
@@ -1545,4 +1979,23 @@ void checkGround() {
 		player.isFallingCounter = 0;
 		player.isJumping = false;
 	}
+}
+
+void checkCollectible() {
+	if (collisionAABBCollectibles(movementX, movementY, player)) {
+		score += 100;
+		generate_randomCoords();
+	}
+	else score += 0;
+}
+
+void generate_randomCoords() {
+	int x = rand()%(screenWidth-24) - (screenWidth/2 - 24), y = -rand()%(screenHeight/2) + 32+12;
+
+	money.updateCoords(x, y);
+
+	initCollectibles();
+	addCollectibles(money.coords);
+
+	//printf("X: %d, Y:%d\n", collectible.coords[0], collectible.coords[1]);
 }
